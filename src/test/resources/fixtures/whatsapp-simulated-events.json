@@ -1,0 +1,112 @@
+{
+  "description": "Fabricated simulation practice events; not an official Meta webhook format.",
+  "selected_groups": [
+    "sim-group-rentals",
+    "sim-group-operations"
+  ],
+  "expected": {
+    "attempts": 12,
+    "accepted": 6,
+    "duplicates": 1,
+    "rejected_unselected": 2,
+    "rejected_invalid": 2,
+    "rejected_conflict": 1
+  },
+  "events": [
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-alex",
+      "message_id": "sim-msg-001",
+      "timestamp": "2026-10-16T12:00:00Z",
+      "content": "We agreed to inspect the crane on Monday."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-bea",
+      "message_id": "sim-msg-002",
+      "timestamp": "2026-10-16T12:01:00Z",
+      "content": "I will send the quotation by Monday."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-alex",
+      "message_id": "sim-msg-003",
+      "timestamp": "2026-10-16T12:02:00Z",
+      "content": "Action: confirm the delivery slot by Tuesday."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-operations",
+      "sender_id": "sim-user-chen",
+      "message_id": "sim-msg-004",
+      "timestamp": "2026-10-16T12:03:00Z",
+      "content": "I will review the safety checklist by Wednesday."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-operations",
+      "sender_id": "sim-user-dana",
+      "message_id": "sim-msg-005",
+      "timestamp": "2026-10-16T12:04:00Z",
+      "content": "Please arrange the site visit tomorrow."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-operations",
+      "sender_id": "sim-user-chen",
+      "message_id": "sim-msg-006",
+      "timestamp": "2026-10-16T12:05:00Z",
+      "content": "The equipment is ready for dispatch."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-excluded",
+      "sender_id": "sim-user-eve",
+      "message_id": "sim-msg-007",
+      "timestamp": "2026-10-16T12:06:00Z",
+      "content": "EXCLUDED_SENTINEL_ALPHA Do not store or summarize this."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-private",
+      "sender_id": "sim-user-eve",
+      "message_id": "sim-msg-008",
+      "timestamp": "2026-10-16T12:07:00Z",
+      "content": "EXCLUDED_SENTINEL_BETA I will reveal an unrelated plan."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-bea",
+      "message_id": "sim-msg-002",
+      "timestamp": "2026-10-16T12:01:00Z",
+      "content": "I will send the quotation by Monday."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-bea",
+      "message_id": "sim-msg-002",
+      "timestamp": "2026-10-16T12:01:00Z",
+      "content": "CONFLICT_SENTINEL Never replace the accepted message."
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-alex",
+      "timestamp": "2026-10-16T12:00:00Z",
+      "content": "INVALID_SENTINEL_MISSING_ID"
+    },
+    {
+      "data_mode": "SIMULATED",
+      "group_id": "sim-group-rentals",
+      "sender_id": "sim-user-alex",
+      "message_id": "sim-msg-invalid-date",
+      "timestamp": "not-a-timestamp",
+      "content": "INVALID_SENTINEL_BAD_TIMESTAMP"
+    }
+  ]
+}

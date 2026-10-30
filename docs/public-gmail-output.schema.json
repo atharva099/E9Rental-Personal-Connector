@@ -1,0 +1,422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.test/e9rental/gmail-output.schema.json",
+  "title": "PROVISIONAL synthetic public gmail practice format 2.0 (not organiser schema)",
+  "type": "object",
+  "properties": {
+    "coverage": {
+      "enum": [
+        "FULL",
+        "LIMITED_VERIFICATION"
+      ]
+    },
+    "requested_thread_limit": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "data_mode": {
+      "const": "SYNTHETIC"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reference_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "scope": {
+      "const": "https://www.googleapis.com/auth/gmail.readonly"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "connector_account_id": {
+      "type": "string"
+    },
+    "thread_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "message_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "object",
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "tenant_id": {
+                "type": "string"
+              },
+              "connector_account_id": {
+                "type": "string"
+              },
+              "source_type": {
+                "const": "GMAIL"
+              },
+              "external_id": {
+                "type": "string"
+              },
+              "parent_external_id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content_text": {
+                "type": "string"
+              },
+              "mime_type": {
+                "const": "text/plain"
+              },
+              "content_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_version": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_created_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "source_updated_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "occurred_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "ingested_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "last_synced_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "schema_version": {
+                    "const": "1"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "to": {
+                    "type": "string"
+                  },
+                  "labels": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "extraction_status": {
+                    "enum": [
+                      "EXTRACTED",
+                      "EMPTY_OR_UNSUPPORTED"
+                    ]
+                  }
+                },
+                "required": [
+                  "schema_version",
+                  "subject",
+                  "from",
+                  "to",
+                  "labels",
+                  "extraction_status"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "document_id",
+              "tenant_id",
+              "connector_account_id",
+              "source_type",
+              "external_id",
+              "parent_external_id",
+              "title",
+              "content_text",
+              "mime_type",
+              "content_hash",
+              "source_version",
+              "source_created_at",
+              "source_updated_at",
+              "occurred_at",
+              "ingested_at",
+              "last_synced_at",
+              "deleted_at",
+              "metadata"
+            ],
+            "additionalProperties": false
+          },
+          "classification": {
+            "enum": [
+              "sales",
+              "marketing",
+              "other"
+            ]
+          },
+          "classification_reasons": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "inbound": {
+            "type": "boolean"
+          },
+          "unanswered_five_days": {
+            "type": "boolean"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "filename": {
+                  "type": "string"
+                },
+                "mime_type": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "attachment_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "business_critical": {
+                  "type": "boolean"
+                },
+                "reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "filename",
+                "mime_type",
+                "size",
+                "attachment_id",
+                "business_critical",
+                "reasons"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "citation": {
+            "type": "object",
+            "properties": {
+              "citation_id": {
+                "type": "string",
+                "pattern": "^S[1-9][0-9]*$"
+              },
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "source_version": {
+                "type": "string"
+              },
+              "source_type": {
+                "const": "GMAIL"
+              },
+              "title": {
+                "type": "string"
+              },
+              "locator": {
+                "type": "string"
+              },
+              "source_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "citation_id",
+              "document_id",
+              "source_version",
+              "source_type",
+              "title",
+              "locator",
+              "source_url",
+              "retrieved_at"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "source",
+          "classification",
+          "classification_reasons",
+          "inbound",
+          "unanswered_five_days",
+          "attachments",
+          "citation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "practice_schema_version": {
+      "const": "2.0"
+    },
+    "provisional_schema": {
+      "const": true
+    },
+    "fixture_provenance": {
+      "const": "GENERATED_SYNTHETIC_FIXTURES"
+    },
+    "official_schema_available": {
+      "const": false
+    },
+    "practice_format": {
+      "const": "gmail-practice-2.0"
+    },
+    "unanswered_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unanswered_messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "document_id": {
+            "type": "string"
+          },
+          "citation": {
+            "type": "object",
+            "properties": {
+              "citation_id": {
+                "type": "string",
+                "pattern": "^S[1-9][0-9]*$"
+              },
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "source_version": {
+                "type": "string"
+              },
+              "source_type": {
+                "const": "GMAIL"
+              },
+              "title": {
+                "type": "string"
+              },
+              "locator": {
+                "type": "string"
+              },
+              "source_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "citation_id",
+              "document_id",
+              "source_version",
+              "source_type",
+              "title",
+              "locator",
+              "source_url",
+              "retrieved_at"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "source_id",
+          "document_id",
+          "citation"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "data_mode",
+    "generated_at",
+    "reference_date",
+    "scope",
+    "tenant_id",
+    "connector_account_id",
+    "thread_count",
+    "message_count",
+    "messages",
+    "practice_schema_version",
+    "provisional_schema",
+    "fixture_provenance",
+    "official_schema_available",
+    "practice_format",
+    "unanswered_count",
+    "unanswered_messages"
+  ],
+  "additionalProperties": false
+}

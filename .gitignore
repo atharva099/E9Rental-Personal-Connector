@@ -1,0 +1,96 @@
+# Secrets and local configuration
+.env
+.env.*
+/*.env
+/*.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+token*.json
+secrets/
+
+# Private runtime directories must stay outside the checkout; ignore common accidental root-level locations.
+/E9Rental-Secrets/
+/personal-gmail/
+/personal-runtime/
+/personal-runtime-*/
+/private-runtime/
+/private-runtime-*/
+/challenge-runtime/
+/gmail-runtime/
+/google-runtime/
+/runtime/
+/runtime-*/
+
+# Runtime identity and OAuth grants/tokens (in addition to *.key and *.enc below).
+**/personal-tenant-id.txt
+**/gmail-token.*
+**/gmail_token.*
+**/drive-token.*
+**/drive_token.*
+**/oauth-token.*
+**/oauth_token.*
+**/oauth-grant.*
+**/oauth_grant.*
+**/refresh-token.*
+**/refresh_token.*
+**/access-token.*
+**/access_token.*
+
+# Java / build outputs
+target/
+build/
+.gradle/
+*.class
+*.jar
+
+# Frontend dependencies / generated files
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# IDE / OS / logs
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+*.log.*
+tmp/
+temp/
+
+# Local data and test artifacts
+data/
+uploads/
+test-results/
+playwright-report/
+
+# Private Gmail exports and encrypted token stores
+**/outputs/*
+*.enc
+*.mv.db
+*.trace.db
+
+# Additional accidental credential/download/diagnostic artifacts
+*oauth*client*.json
+client_secret*.json
+*.p12
+*.pfx
+*.jks
+*.sqlite
+*.sqlite3
+*.db
+*.har
+verification/
+downloads/
+__pycache__/
+*.pyc
+
+# Only these generated, reviewed SYNTHETIC/SIMULATED examples may be published.
+!/outputs/whatsapp_output.json
+!/outputs/gmail_output.json
+!/outputs/drive_output.json

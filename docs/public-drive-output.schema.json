@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PROVISIONAL synthetic public drive practice format 2.0 (not organiser schema)",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "data_mode": {
+      "const": "SYNTHETIC"
+    },
+    "coverage": {
+      "enum": [
+        "LIMITED_VERIFICATION",
+        "SYNTHETIC_FIXTURE"
+      ]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "const": "https://www.googleapis.com/auth/drive.readonly"
+    },
+    "requested_file_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 25
+    },
+    "file_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "extracted_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "incomplete_search": {
+      "type": "boolean"
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "object",
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "tenant_id": {
+                "type": "string"
+              },
+              "connector_account_id": {
+                "type": "string"
+              },
+              "source_type": {
+                "const": "DRIVE"
+              },
+              "external_id": {
+                "type": "string"
+              },
+              "parent_external_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "content_text": {
+                "type": "string"
+              },
+              "mime_type": {
+                "type": "string"
+              },
+              "content_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_version": {
+                "type": "string"
+              },
+              "source_created_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "source_updated_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "occurred_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "ingested_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "last_synced_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "schema_version": {
+                    "const": "1"
+                  },
+                  "extraction_status": {
+                    "enum": [
+                      "EXTRACTED",
+                      "EMPTY",
+                      "SKIPPED",
+                      "FAILED"
+                    ]
+                  },
+                  "original_mime_type": {
+                    "type": "string"
+                  },
+                  "synthetic": {
+                    "type": "boolean"
+                  },
+                  "owner": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "schema_version",
+                  "extraction_status",
+                  "original_mime_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "document_id",
+              "tenant_id",
+              "connector_account_id",
+              "source_type",
+              "external_id",
+              "parent_external_id",
+              "title",
+              "content_text",
+              "mime_type",
+              "content_hash",
+              "source_version",
+              "source_created_at",
+              "source_updated_at",
+              "occurred_at",
+              "ingested_at",
+              "last_synced_at",
+              "deleted_at",
+              "metadata"
+            ],
+            "additionalProperties": false
+          },
+          "category": {
+            "enum": [
+              "sales",
+              "marketing",
+              "verification",
+              "office",
+              "accounts"
+            ]
+          },
+          "classification_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "extraction_status": {
+            "enum": [
+              "EXTRACTED",
+              "EMPTY",
+              "SKIPPED",
+              "FAILED"
+            ]
+          },
+          "extraction_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "citation": {
+            "type": "object",
+            "properties": {
+              "citation_id": {
+                "type": "string",
+                "pattern": "^D[1-9][0-9]*$"
+              },
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "source_version": {
+                "type": "string"
+              },
+              "source_type": {
+                "const": "DRIVE"
+              },
+              "title": {
+                "type": "string"
+              },
+              "locator": {
+                "type": "string"
+              },
+              "source_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "citation_id",
+              "document_id",
+              "source_version",
+              "source_type",
+              "title",
+              "locator",
+              "source_url",
+              "retrieved_at"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "source",
+          "category",
+          "classification_reason",
+          "extraction_status",
+          "extraction_reason",
+          "citation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "practice_schema_version": {
+      "const": "2.0"
+    },
+    "provisional_schema": {
+      "const": true
+    },
+    "fixture_provenance": {
+      "const": "GENERATED_SYNTHETIC_FIXTURES"
+    },
+    "official_schema_available": {
+      "const": false
+    },
+    "practice_format": {
+      "const": "drive-practice-2.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "data_mode",
+    "coverage",
+    "generated_at",
+    "scope",
+    "requested_file_limit",
+    "file_count",
+    "extracted_count",
+    "incomplete_search",
+    "documents",
+    "practice_schema_version",
+    "provisional_schema",
+    "fixture_provenance",
+    "official_schema_available",
+    "practice_format"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "data_mode": {
+            "const": "LIVE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "coverage": {
+            "const": "LIMITED_VERIFICATION"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "data_mode": {
+            "const": "SYNTHETIC"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "coverage": {
+            "const": "SYNTHETIC_FIXTURE"
+          },
+          "documents": {
+            "items": {
+              "properties": {
+                "source": {
+                  "properties": {
+                    "metadata": {
+                      "required": [
+                        "synthetic"
+                      ],
+                      "properties": {
+                        "synthetic": {
+                          "const": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

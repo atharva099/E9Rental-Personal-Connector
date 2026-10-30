@@ -1,0 +1,1003 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PROVISIONAL synthetic public whatsapp practice format 2.0 (not organiser schema)",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "data_mode": {
+      "const": "SIMULATED"
+    },
+    "live_integration": {
+      "const": false
+    },
+    "coverage": {
+      "const": "CURRENT_SELECTED_GROUPS"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "message_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "selected_groups": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 25,
+      "items": {
+        "type": "string",
+        "pattern": "^sim-"
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "object",
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "tenant_id": {
+                "type": "string"
+              },
+              "connector_account_id": {
+                "type": "string"
+              },
+              "source_type": {
+                "const": "WHATSAPP"
+              },
+              "external_id": {
+                "type": "string"
+              },
+              "parent_external_id": {
+                "type": "string",
+                "pattern": "^sim-"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content_text": {
+                "type": "string"
+              },
+              "mime_type": {
+                "const": "text/plain"
+              },
+              "content_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_version": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_created_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "source_updated_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "occurred_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "ingested_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "last_synced_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "schema_version": {
+                    "const": "1"
+                  },
+                  "data_mode": {
+                    "const": "SIMULATED"
+                  },
+                  "group_id": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  },
+                  "sender_id": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  },
+                  "group_name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "metadata_version": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 1
+                  },
+                  "current_sender_display_name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "current_sender_number": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^sim-number-"
+                  }
+                },
+                "required": [
+                  "schema_version",
+                  "data_mode",
+                  "group_id",
+                  "sender_id"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "document_id",
+              "tenant_id",
+              "connector_account_id",
+              "source_type",
+              "external_id",
+              "parent_external_id",
+              "title",
+              "content_text",
+              "mime_type",
+              "content_hash",
+              "source_version",
+              "source_created_at",
+              "source_updated_at",
+              "occurred_at",
+              "ingested_at",
+              "last_synced_at",
+              "deleted_at",
+              "metadata"
+            ],
+            "additionalProperties": false
+          },
+          "citation": {
+            "type": "object",
+            "properties": {
+              "citation_id": {
+                "type": "string",
+                "pattern": "^W[1-9][0-9]*$"
+              },
+              "document_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "source_version": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_type": {
+                "const": "WHATSAPP"
+              },
+              "locator": {
+                "type": "string",
+                "pattern": "^simulated-whatsapp:"
+              },
+              "source_url": {
+                "type": "null"
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "citation_id",
+              "document_id",
+              "source_version",
+              "source_type",
+              "locator",
+              "source_url",
+              "retrieved_at"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "source",
+          "citation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string",
+            "pattern": "^sim-"
+          },
+          "message_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "summary": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "supporting_message_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  }
+                },
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "start_offset": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_offset": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "text",
+                "supporting_message_ids",
+                "sender_id",
+                "start_offset",
+                "end_offset"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 3
+          },
+          "commitments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "supporting_message_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  }
+                },
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "start_offset": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_offset": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "text",
+                "supporting_message_ids",
+                "sender_id",
+                "start_offset",
+                "end_offset"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "action_items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "supporting_message_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  }
+                },
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "start_offset": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_offset": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "text",
+                "supporting_message_ids",
+                "sender_id",
+                "start_offset",
+                "end_offset"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "group_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128
+          },
+          "metadata_version": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "metadata_updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "display_name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 128
+                },
+                "number": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^sim-number-[A-Za-z0-9_-]{1,24}$"
+                }
+              },
+              "required": [
+                "sender_id",
+                "display_name",
+                "number"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "requests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "supporting_message_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  }
+                },
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "start_offset": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_offset": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "kind": {
+                  "enum": [
+                    "REQUEST",
+                    "COMMITMENT",
+                    "ACTION",
+                    "DECISION"
+                  ]
+                },
+                "task": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "assignee_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^sim-"
+                },
+                "due_date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                },
+                "status": {
+                  "enum": [
+                    "EXPLICIT",
+                    "REQUESTED",
+                    "RECORDED_AGREEMENT",
+                    "UNCONFIRMED",
+                    "CONFLICTING"
+                  ]
+                }
+              },
+              "required": [
+                "text",
+                "supporting_message_ids",
+                "sender_id",
+                "start_offset",
+                "end_offset",
+                "kind",
+                "task",
+                "assignee_id",
+                "due_date",
+                "status"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "supporting_message_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^sim-"
+                  }
+                },
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "start_offset": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_offset": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "kind": {
+                  "enum": [
+                    "REQUEST",
+                    "COMMITMENT",
+                    "ACTION",
+                    "DECISION"
+                  ]
+                },
+                "task": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                },
+                "assignee_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^sim-"
+                },
+                "due_date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                },
+                "status": {
+                  "enum": [
+                    "EXPLICIT",
+                    "REQUESTED",
+                    "RECORDED_AGREEMENT",
+                    "UNCONFIRMED",
+                    "CONFLICTING"
+                  ]
+                }
+              },
+              "required": [
+                "text",
+                "supporting_message_ids",
+                "sender_id",
+                "start_offset",
+                "end_offset",
+                "kind",
+                "task",
+                "assignee_id",
+                "due_date",
+                "status"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "participant_interpretations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sender_id": {
+                  "type": "string",
+                  "pattern": "^sim-"
+                },
+                "requests": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "supporting_message_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                          "type": "string",
+                          "pattern": "^sim-"
+                        }
+                      },
+                      "sender_id": {
+                        "type": "string",
+                        "pattern": "^sim-"
+                      },
+                      "start_offset": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "end_offset": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "kind": {
+                        "enum": [
+                          "REQUEST",
+                          "COMMITMENT",
+                          "ACTION",
+                          "DECISION"
+                        ]
+                      },
+                      "task": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "assignee_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^sim-"
+                      },
+                      "due_date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date"
+                      },
+                      "status": {
+                        "enum": [
+                          "EXPLICIT",
+                          "REQUESTED",
+                          "RECORDED_AGREEMENT",
+                          "UNCONFIRMED",
+                          "CONFLICTING"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "supporting_message_ids",
+                      "sender_id",
+                      "start_offset",
+                      "end_offset",
+                      "kind",
+                      "task",
+                      "assignee_id",
+                      "due_date",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "commitments": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "supporting_message_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                          "type": "string",
+                          "pattern": "^sim-"
+                        }
+                      },
+                      "sender_id": {
+                        "type": "string",
+                        "pattern": "^sim-"
+                      },
+                      "start_offset": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "end_offset": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "kind": {
+                        "enum": [
+                          "REQUEST",
+                          "COMMITMENT",
+                          "ACTION",
+                          "DECISION"
+                        ]
+                      },
+                      "task": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "assignee_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^sim-"
+                      },
+                      "due_date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date"
+                      },
+                      "status": {
+                        "enum": [
+                          "EXPLICIT",
+                          "REQUESTED",
+                          "RECORDED_AGREEMENT",
+                          "UNCONFIRMED",
+                          "CONFLICTING"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "supporting_message_ids",
+                      "sender_id",
+                      "start_offset",
+                      "end_offset",
+                      "kind",
+                      "task",
+                      "assignee_id",
+                      "due_date",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "action_items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "supporting_message_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                          "type": "string",
+                          "pattern": "^sim-"
+                        }
+                      },
+                      "sender_id": {
+                        "type": "string",
+                        "pattern": "^sim-"
+                      },
+                      "start_offset": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "end_offset": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "kind": {
+                        "enum": [
+                          "REQUEST",
+                          "COMMITMENT",
+                          "ACTION",
+                          "DECISION"
+                        ]
+                      },
+                      "task": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "assignee_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^sim-"
+                      },
+                      "due_date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date"
+                      },
+                      "status": {
+                        "enum": [
+                          "EXPLICIT",
+                          "REQUESTED",
+                          "RECORDED_AGREEMENT",
+                          "UNCONFIRMED",
+                          "CONFLICTING"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "supporting_message_ids",
+                      "sender_id",
+                      "start_offset",
+                      "end_offset",
+                      "kind",
+                      "task",
+                      "assignee_id",
+                      "due_date",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "decisions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "supporting_message_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "items": {
+                          "type": "string",
+                          "pattern": "^sim-"
+                        }
+                      },
+                      "sender_id": {
+                        "type": "string",
+                        "pattern": "^sim-"
+                      },
+                      "start_offset": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "end_offset": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "kind": {
+                        "enum": [
+                          "REQUEST",
+                          "COMMITMENT",
+                          "ACTION",
+                          "DECISION"
+                        ]
+                      },
+                      "task": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      },
+                      "assignee_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^sim-"
+                      },
+                      "due_date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date"
+                      },
+                      "status": {
+                        "enum": [
+                          "EXPLICIT",
+                          "REQUESTED",
+                          "RECORDED_AGREEMENT",
+                          "UNCONFIRMED",
+                          "CONFLICTING"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "supporting_message_ids",
+                      "sender_id",
+                      "start_offset",
+                      "end_offset",
+                      "kind",
+                      "task",
+                      "assignee_id",
+                      "due_date",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "sender_id",
+                "requests",
+                "commitments",
+                "action_items",
+                "decisions"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "group_id",
+          "message_count",
+          "summary",
+          "commitments",
+          "action_items",
+          "group_name",
+          "metadata_version",
+          "metadata_updated_at",
+          "participants",
+          "requests",
+          "decisions",
+          "participant_interpretations"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "practice_schema_version": {
+      "const": "2.0"
+    },
+    "provisional_schema": {
+      "const": true
+    },
+    "fixture_provenance": {
+      "const": "GENERATED_SYNTHETIC_FIXTURES"
+    },
+    "official_schema_available": {
+      "const": false
+    },
+    "practice_format": {
+      "const": "whatsapp-practice-2.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "data_mode",
+    "live_integration",
+    "coverage",
+    "generated_at",
+    "message_count",
+    "selected_groups",
+    "messages",
+    "groups",
+    "practice_schema_version",
+    "provisional_schema",
+    "fixture_provenance",
+    "official_schema_available",
+    "practice_format"
+  ],
+  "additionalProperties": false
+}

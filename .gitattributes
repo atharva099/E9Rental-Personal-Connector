@@ -1,0 +1,4 @@
+# Canonical generated artifacts must retain identical UTF-8/LF bytes on every checkout.
+outputs/whatsapp_output.json text eol=lf
+outputs/gmail_output.json text eol=lf
+outputs/drive_output.json text eol=lf

@@ -1,0 +1,102 @@
+# AI usage
+
+## Task 1 — 2026-10-16
+Codex assisted with workspace initialization, repository workflow documentation,
+proposed architecture, configuration placeholders, and static verification.
+No AI application feature or live model API integration is implemented.
+
+The assistant checked the requested path and available workspace context.
+The agreed eight-hour plan was initially unavailable. The user subsequently supplied it; Codex recorded the exact schedule, rules, and review checkpoints, reconciled related documentation, and verified the update. No application implementation was started.
+Verification evidence belongs in TEST_RESULTS.md; generated documentation is not proof of working integrations.
+
+## Review requirements
+Humans should review architecture decisions, permissions, scopes, data handling, and the exact development plan before implementation.
+Record future AI assistance with task/date, affected work, verification performed, and unresolved limitations.
+Never include secrets, real customer records, or private connector content in prompts or this log.
+
+## Pre-Sprint 2 workspace setup — 2026-10-16
+Codex created a linked Git worktree, updated worktree instructions and the proposed common data model, and ran Git linkage, branch, scope, field-presence and whitespace checks. No application features or live connector calls were implemented. Verification evidence is in TEST_RESULTS.md.
+
+## Sprint 2 — 2026-10-16
+Codex implemented the Java 21 Spring Boot Maven foundation; loopback health and protected local APIs; official Gmail REST adapter; PKCE/state OAuth flow; AES-GCM refresh-token storage; deterministic classification, pending-reply and attachment heuristics; shared source mapping; practice JSON schema/export; synthetic fixtures, 48 automated tests and setup helper scripts.
+Official Spring and Google documentation and Maven Central were consulted for current compatibility and protocol details. Build/test results, JSON schema checks and packaged health/security requests were executed and recorded in TEST_RESULTS.md. A pagination-token encoding issue found during review was corrected and regression-tested. Helpers were syntax-checked, not verified with real OAuth credentials.
+No real account contents, client credentials or tokens were supplied to the assistant. Live OAuth/token exchange/Gmail API access remain unverified pending user setup; no live success is claimed. Human review is required for filename/classification heuristics, source mappings and real read-only results before Sprint 2 completion. No later-sprint features, merge or push were performed.
+
+## Live Gmail verification — 2026-10-17
+Codex verified saved encrypted OAuth state and application token refresh without restarting consent. Real export initially encountered Gmail rate limits; added allowlisted diagnostic categories, bounded retry/pacing and an explicit limited verification mode with coverage metadata. Final Maven build passed 54 tests. A real protected export processed 25 emails from 25 complete threads; an aggregate-only verifier validated external schema/mapping/hash/citation results. Full-mailbox export was not completed and is not claimed. Credentials, tokens and private output stayed external, with ACL checks; no account content was printed or supplied to model context. No merge, push or later-sprint work occurred.
+
+## Sprint 3 — Drive connector preparation — 2026-10-17
+Codex implemented separate Drive-only OAuth using the existing external Desktop client, read-only listing/export/download adapters, bounded local PDFBox/POI extraction, deterministic five-category classification and shared source/citation output. Consulted official Google export/list/download documentation and Apache/Maven release metadata. Added synthetic generated-format, OAuth separation, permission, pagination, classification, mapping, HTTP and bounded-download tests. Final build passed 83 tests; packaged health and route security were verified. Manual Drive consent was opened and requested; real Drive access/extraction remains pending. No private client/token values or live documents entered model context or committed fixtures. Main was not modified, merged or pushed.
+
+## Sprint 3 live verification continuation — 2026-10-17
+Reused completed manual consent and verified the encrypted Drive grant refreshed after backend restart. Limited real export processed five PDFs: two text extractions and three empty-text records. All 83 automated tests, aggregate-only output verification and health checks passed. Only counts, MIME-type labels, fixed status/reason labels and category counts entered tool output; no real filenames, document contents, source identifiers, addresses, client credentials or token values entered model context or committed fixtures. Recorded format-specific limitations and updated status without adding features, merging, pushing or starting another sprint.
+
+## Sprint 4 — simulated WhatsApp-style integration — 2026-10-17
+Codex implemented synthetic-only ingestion, pre-content selected-group filtering, validation, local H2 transactional persistence, scoped deduplication/conflict rejection, current-policy exports, extractive summaries and message-linked commitments/actions. Added public fabricated fixtures, schema, launch/demo/verification helpers and 22 security/behavior tests; final complete suite passed 105 tests including Gmail/Drive regressions. Ran the packaged fixture, restart replay, direct read-only database count/sentinel audit, schema/evidence/log checks and health verification. Final packaged smoke: 13 submissions, 6 accepted, 5 rejected, 2 duplicates ignored; six persisted messages and no excluded rows/content markers. No Meta/WhatsApp API, account, real data, external AI/model, live connectivity or production webhook support is claimed. Existing private Google credentials were not displayed; no live Google API calls were made for this sprint. Work remains on its feature branch with no merge or push.
+
+## Live OAuth verification preparation
+Updated launch helpers to load an external Desktop client into the application's environment without printing credential values or copying files into Git. Token/key/output storage now defaults outside both worktrees; external runtime ACL and path rejection were verified. Reran 48 tests and packaged health successfully. Opened a validated read-only Google authorization URL directly in the user's browser and paused for manual consent. No account addresses, message bodies, token values or client secrets were shown in chat or logs. Real Gmail requests and processing remain pending.
+
+## Sprint 5 — unified storage and search — 2026-10-17
+Codex inspected verified history and existing source models, created the Sprint 5 feature branch from c318d88 and implemented a reusable source-evidence wrapper, existing-output ingestion, authoritative accepted WhatsApp snapshots, persistent local H2 index and protected keyword/source/metadata search. Added 15 synthetic tests; final full Maven run passed 120 tests including all 105 regressions. Executed an isolated 14-record packaged synthetic smoke, idempotent replay, restart verification, direct aggregate-only H2 exclusion/sentinel audit, script parsing, ACL checks and normal backend health. Corrected two PowerShell verifier issues before recording the final passed run. No Google/Meta requests, live data indexing, external model or private document inspection occurred; credentials and real outputs stayed external and were not displayed. Production MySQL, source ACL refresh and grounded Q&A remain deferred. No merge or push.
+
+## Sprint 6 — deterministic evidence-based Q&A — 2026-10-17
+Codex inspected verified cdb85ad, branched Sprint 6, implemented a small natural-language grammar, policy-filtered unified retrieval, exact evidence selection, server-built citations and protected bounded JSON API. The registered provider is deterministic; no LLM or external AI integration was configured or claimed. Added 19 synthetic tests and ran the full suite: 139 passed, zero failures/errors/skips. Executed packaged synthetic verification over 14 records: five positive questions, eight exact source/version/locator/offset checks, missing-information and excluded-group abstention, no question/evidence logs and health 200 UP. Prompt injection protection uses structural non-execution, citation validation and conservative omission heuristics, not a claim of complete malicious-text detection. No real private Gmail/Drive data was inspected, indexed for this sprint, sent to AI or committed. Human authorization and real-provider tests are required before future external processing. Main unchanged; no merge/push.
+
+## Sprint 7 — React frontend — 2026-10-17
+Codex verified 1d663dc, created the Sprint 7 branch and implemented React/Vite UI and modular API calls over existing bearer-protected endpoints. Consulted official React/Vite docs and npm version/engine metadata; no external connector or AI service used. Automated production build, 14 frontend unit/component tests, all 139 backend regressions and one real Chromium scenario on both dev and built preview. The initial browser run found a dropdown accessible-name issue; fixed explicit labels and reran successfully. Visually inspected synthetic desktop/mobile screenshots. Auth tokens were read only from the isolated external synthetic runtime for automation, never printed or embedded in application source; persistent browser storage remained empty and console checks passed. All displayed automated data was fabricated. Exact startup/token instructions and limits documented; no merge/push or production deployment.
+
+## Sprint 7 manual invoice-example reconciliation — 2026-10-17
+Codex reproduced direct and proxied no-evidence responses and compared the isolated Q&A unit fixture with the packaged six-message Gmail seed. Identified an absent demo record rather than a production logic failure. Added an explicit fabricated provider fixture and shared mapped demo seed, preserving the original unit fixtures and all production evidence/security code. Full backend build passed 140 tests; frontend build and 14 tests passed; extended actual React/Chromium scenario verified exact invoice question, rendered amount and source/version/locator/span against protected search. Re-ingestion and restart persistence checks passed. Credentials stayed external, no real Google/Drive contents were inspected, no external AI/API request or merge/push occurred.
+
+## Sprint 8 — complete integration verification — 2026-10-17
+Codex read current contracts/history and created codex/integration-verification from 608bed4. Ran all backend/frontend checks, added a real HTTP end-to-end pipeline test with mocked synthetic Google gateways, and created aggregate-only packaged security and limited-live verification helpers. Final backend suite 141 passed; frontend 14 passed/build successful; Chromium passed on dev and built preview. Verified 15 synthetic/simulated records, six positive Q&A questions/nine exact citations, 38 API/security assertions, direct database exclusion audits and restart persistence. Separately reused existing read-only grants for one Gmail message/thread and two Drive PDFs (both empty text); private snapshots remained external, original exports restored and ACLs verified. No credentials/private contents entered chat or Git, no real data sent to AI, no live WhatsApp claim, no new application defect or production behavior change. No merge/push.
+## Sprint 9 preparation — final documentation and integration
+Codex reviewed the linear sprint ancestry and existing evidence, prepared a current-state README/architecture, placeholder configuration, Google OAuth guides and security/publication guidance. A standard-library redacted audit checked reachable history for sensitive artifacts/token patterns and compared known external private values without printing them. Public demo data remains synthetic; Q&A deterministic; WhatsApp simulated. Final main integration/results will be recorded only after execution. No GitHub push or private-data publication is authorized.
+
+## Sprint 9 - owner-approved Git identity privacy remediation
+Codex verified the restricted external recovery backup, preserved pending work, fixed/tested the audit variable-shadowing defect, and rewrote all unpublished branch histories using the exact noreply identity supplied by the owner. No private identity value was printed. All historical source trees were preserved. Executed 141 backend tests, 14 frontend tests/build, five audit regressions, packaged restart/QA/storage/security checks and Chromium dev/preview flows. No application functionality, global Git configuration, external AI processing or live Google data was changed. Local unreachable recovery objects and the external backup remain private; only reviewed refs may be published in a future authorized task. No push occurred.
+
+## Strict 8-hour run - M1 Google boundaries
+Codex implemented fail-closed approved account/root checks and LIVE import/store/retrieval isolation in the existing architecture using official Google metadata/search documentation. All tests used fabricated fixtures and mocked Google replies; no personal account/token/client or external AI processing. Final full backend suite 159 passed, frontend 14 passed/build. Initial test-assertion and constructor-compilation failures fixed and retained externally. Direct-child Drive scope only; live verification and M2 remain blocked/unstarted.
+
+
+## M2 connector-to-QA integration, 2026-10-17
+
+Codex implemented synthetic provider process tests and diagnosed/fixed a real canonical fingerprint ordering defect. Tests use generated documents/messages and locally encrypted fake OAuth grants; no personal Google data, credentials or external AI calls. Answers remain deterministic/extractive, not LLM-generated. Human-approved M2 scope only; next milestone requires instruction. Actual commands/results/limitations are recorded in TEST_RESULTS.md; no invented elapsed time or live integration claims.
+
+
+## M3 bounded reasoning - 2026-10-17
+
+Codex added deterministic rule-based month-sales aggregation, metadata/reference-based pending-mail selection and selected-group/week explicit decisions, with controlled synthetic fixtures, unit/authenticated HTTP/package/browser/restart tests. There is no LLM/external AI invocation. No personal Google content or real credentials were used. Tests caught parser and fixture configuration errors; actual failures/fixes and final results are retained in TEST_RESULTS.md. Snapshot completeness is a human/operator assertion, not fabricated provider coverage. Names/roster/implicit decisions remain unknown, not invented. Scope stops after M3 pending next human instruction.
+
+
+## M4 simulated interpretation and synthetic outputs - 2026-10-17
+
+Codex extended the existing simulated message/H2 pipeline with versioned synthetic group/participant metadata, exact-span lexical interpretations and controlled public output generation/validation. Supplied names and sim-number-* placeholders are fabricated; unknown fields stay null. No Meta/Google account, unofficial library, external AI or real-record redaction was used. An unknown ignored Gmail file was preserved externally without record analysis, not copied into public fixtures. Tests exposed ordering, fixture-schema and verifier log-sharing issues; final results/failures are documented in TEST_RESULTS.md. Outputs are explicitly provisional, never official-schema or live integration claims. Human approval is required before M5 or publication; no push/merge performed.
+
+
+## M5 independent verification - 2026-10-17
+
+Codex reread the original PDF and inspected actual connector/guard/repository/reasoning/interpretation/frontend code, reran the complete suites and packaged synthetic integration/browser/restart/security/output checks, independently compared original-question citations with stored evidence, and adjudicated all 77 requirements. At the time of this dated M5 entry, the timed demonstration was still pending; it was completed later as recorded below and in TEST_RESULTS.md. No application code or external AI provider was added; no personal Google/Meta request or real-record export was used. No merge/push/rewrite/publication occurred.
+
+
+## Continued verification and bounded Q&A correction - 2026-10-17
+
+Codex independently reproduced an abstention for a reasonable site-team decision paraphrase, updated the finite question grammar, and added source-verified Java/browser regressions. The first new unit test lacked WhatsApp fixture events; this was corrected before the passing full build. Human review should confirm question wording and bounded scope. No LLM, external AI, personal Google data or new citation behavior was used.
+
+## Final local demonstration and documentation audit - 2026-10-17
+
+The local seven-minute synthetic application demonstration ran from 16:44:36.676 to 16:51:40.163 IST (7m 03.487s). It demonstrated the three bounded PDF question types with source citations, the three provisional synthetic JSON outputs, protected local access and insufficient-evidence abstention. This was a local practice demonstration; no organiser or judges were present, and no official judging, live Google sandbox access, official WhatsApp integration or official output-schema validation is claimed. The latest recorded complete backend run passed 208 tests; the frontend passed 14 tests and its production build. Codex assistance was used for the documentation-only consistency cleanup; human review remains necessary for the project and its limits. No personal Google data or external AI provider was used.
+
+## Gmail full-email viewer backend Phase 1 — 2026-10-20
+
+Codex assistance implemented a protected, bounded, transient selected-message detail API and synthetic security/MIME tests. Fixtures used fabricated messages and identifiers only. No live Gmail/API request, OAuth, runtime/database access, deployment, external AI or model was used. The API does not persist or log full email details; the React viewer remains a later phase. Final backend verification passed 384 tests, with focused viewer/Q&A regressions passing 79 tests; details are in TEST_RESULTS.md. Human review remains required before deployment.
+
+## Gmail full-email viewer React Phase 2 — 2026-10-20
+
+Codex assistance implemented the React flow over the existing protected viewer API: per-tab cryptographic session UUID, fresh per-message confirmation, one-use approval then detail request, accessible plain-text detail panel, and transient-state clearing. Synthetic fixtures only; no live Gmail/API, OAuth, sync, runtime/database, deployment, external AI or model operation occurred. Verification: 38 frontend tests, production build, one synthetic Chromium flow using intercepted API routes, and 79 focused backend API/viewer regressions. Documentation validation, publication audit and privacy checks are in TEST_RESULTS.md. An early test run identified hidden source metadata still present in the citation DOM; that rendering was removed. A later assertion was corrected to match the three confirmations exercised by the browser flow (Ask, canceled view, accepted view). Selection handles are retired in UI once a view is confirmed, so a fresh query is needed after an uncertain failure. No backend security contract or retrieval behavior changed; live viewer behavior remains unverified.
+
+## Gmail full-email viewer Step 23 — bounded request-body deadline — 2026-10-20
+
+Codex assistance moved both viewer endpoint body reads into the existing bounded viewer execution boundary, capped JSON input at 1 KiB, added deadline checks during reads, and used only synthetic slow/incomplete/oversized/malformed request bodies. Unit/controller tests verified no approval/provider service call on rejected bodies and bounded worker/queue occupancy; an embedded Tomcat socket test confirmed a content-free local timeout response while the client body remained incomplete. The shared timeout diagnostic was made generic so direct Ask does not receive viewer-specific wording. Development and independent Personal Testing each passed 406 backend tests; Personal Testing passed 38 frontend tests/build. No live Gmail, OAuth, runtime, database, deployment or external AI was used. Blocking servlet reads and remote cancellation retain the documented best-effort limits.

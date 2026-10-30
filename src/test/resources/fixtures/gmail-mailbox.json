@@ -1,0 +1,281 @@
+{
+  "mailbox": "owner@example.test",
+  "reference_date": "2026-10-16",
+  "threads": [
+    {
+      "id": "t1",
+      "messages": [
+        {
+          "id": "m1",
+          "threadId": "t1",
+          "internalDate": "1791590400000",
+          "labelIds": [
+            "INBOX"
+          ],
+          "payload": {
+            "mimeType": "multipart/mixed",
+            "headers": [
+              {
+                "name": "Subject",
+                "value": "Quotation request"
+              },
+              {
+                "name": "From",
+                "value": "sender@example.test"
+              },
+              {
+                "name": "To",
+                "value": "owner@example.test"
+              }
+            ],
+            "parts": [
+              {
+                "mimeType": "text/plain",
+                "body": {
+                  "data": "UGxlYXNlIHNoYXJlIHByaWNpbmc="
+                }
+              },
+              {
+                "filename": "invoice_42.pdf",
+                "mimeType": "application/pdf",
+                "body": {
+                  "size": 100,
+                  "attachmentId": "att-0"
+                }
+              },
+              {
+                "filename": "quotation.pdf",
+                "mimeType": "application/pdf",
+                "body": {
+                  "size": 101,
+                  "attachmentId": "att-1"
+                }
+              },
+              {
+                "filename": "PO-123.pdf",
+                "mimeType": "application/pdf",
+                "body": {
+                  "size": 102,
+                  "attachmentId": "att-2"
+                }
+              },
+              {
+                "filename": "contract.pdf",
+                "mimeType": "application/pdf",
+                "body": {
+                  "size": 103,
+                  "attachmentId": "att-3"
+                }
+              },
+              {
+                "filename": "KYC_passport.pdf",
+                "mimeType": "application/pdf",
+                "body": {
+                  "size": 104,
+                  "attachmentId": "att-4"
+                }
+              },
+              {
+                "filename": "holiday.jpg",
+                "mimeType": "image/jpeg",
+                "body": {
+                  "size": 105,
+                  "attachmentId": "att-5"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "messages": [
+        {
+          "id": "m2",
+          "threadId": "t2",
+          "internalDate": "1790812800000",
+          "labelIds": [
+            "INBOX"
+          ],
+          "payload": {
+            "mimeType": "multipart/mixed",
+            "headers": [
+              {
+                "name": "Subject",
+                "value": "Newsletter discount"
+              },
+              {
+                "name": "From",
+                "value": "sender@example.test"
+              },
+              {
+                "name": "To",
+                "value": "owner@example.test"
+              },
+              {
+                "name": "List-Unsubscribe",
+                "value": "<mailto:unsubscribe@example.test>"
+              }
+            ],
+            "parts": [
+              {
+                "mimeType": "text/plain",
+                "body": {
+                  "data": "UHJvbW90aW9uOiB1bnN1YnNjcmliZQ=="
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "messages": [
+        {
+          "id": "m4",
+          "threadId": "t3",
+          "internalDate": "1791244800000",
+          "labelIds": [
+            "SENT"
+          ],
+          "payload": {
+            "mimeType": "multipart/mixed",
+            "headers": [
+              {
+                "name": "Subject",
+                "value": "Re: General question"
+              },
+              {
+                "name": "From",
+                "value": "owner@example.test"
+              },
+              {
+                "name": "To",
+                "value": "owner@example.test"
+              }
+            ],
+            "parts": [
+              {
+                "mimeType": "text/plain",
+                "body": {
+                  "data": "Q29uZmlybWVk"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "m3",
+          "threadId": "t3",
+          "internalDate": "1791158400000",
+          "labelIds": [
+            "INBOX"
+          ],
+          "payload": {
+            "mimeType": "multipart/mixed",
+            "headers": [
+              {
+                "name": "Subject",
+                "value": "General question"
+              },
+              {
+                "name": "From",
+                "value": "sender@example.test"
+              },
+              {
+                "name": "To",
+                "value": "owner@example.test"
+              }
+            ],
+            "parts": [
+              {
+                "mimeType": "text/plain",
+                "body": {
+                  "data": "Q2FuIHlvdSBjb25maXJtIHJlY2VpcHQ_"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "messages": [
+        {
+          "id": "m5",
+          "threadId": "t4",
+          "internalDate": "1792022400000",
+          "labelIds": [
+            "INBOX"
+          ],
+          "payload": {
+            "mimeType": "multipart/mixed",
+            "headers": [
+              {
+                "name": "Subject",
+                "value": "Meeting"
+              },
+              {
+                "name": "From",
+                "value": "sender@example.test"
+              },
+              {
+                "name": "To",
+                "value": "owner@example.test"
+              }
+            ],
+            "parts": [
+              {
+                "mimeType": "text/plain",
+                "body": {
+                  "data": "VG9tb3Jyb3c_"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "messages": [
+        {
+          "id": "m6",
+          "threadId": "t5",
+          "internalDate": "1790899200000",
+          "labelIds": [
+            "SENT"
+          ],
+          "payload": {
+            "mimeType": "multipart/mixed",
+            "headers": [
+              {
+                "name": "Subject",
+                "value": "Proposal"
+              },
+              {
+                "name": "From",
+                "value": "owner@example.test"
+              },
+              {
+                "name": "To",
+                "value": "owner@example.test"
+              }
+            ],
+            "parts": [
+              {
+                "mimeType": "text/plain",
+                "body": {
+                  "data": "T3VyIHNhbGVzIHByb3Bvc2Fs"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

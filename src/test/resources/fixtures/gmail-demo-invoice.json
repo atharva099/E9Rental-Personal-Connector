@@ -1,0 +1,33 @@
+{
+  "id": "demo-thread-invoice",
+  "messages": [
+    {
+      "id": "demo-invoice-1200",
+      "threadId": "demo-thread-invoice",
+      "internalDate": "1792108800000",
+      "labelIds": [
+        "INBOX"
+      ],
+      "payload": {
+        "mimeType": "text/plain",
+        "headers": [
+          {
+            "name": "Subject",
+            "value": "Synthetic rental invoice example"
+          },
+          {
+            "name": "From",
+            "value": "demo-sender@example.test"
+          },
+          {
+            "name": "To",
+            "value": "owner@example.test"
+          }
+        ],
+        "body": {
+          "data": "UmVudGFsIGludm9pY2UgYW1vdW50IGlzIFVTRCAxMjAwLg"
+        }
+      }
+    }
+  ]
+}

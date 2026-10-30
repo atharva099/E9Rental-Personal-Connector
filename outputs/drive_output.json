@@ -1,0 +1,217 @@
+{
+  "coverage" : "SYNTHETIC_FIXTURE",
+  "data_mode" : "SYNTHETIC",
+  "documents" : [ {
+    "category" : "sales",
+    "citation" : {
+      "citation_id" : "D1",
+      "document_id" : "9f276c1d-d322-34ee-8328-f53a5f36cdb4",
+      "locator" : "synthetic-drive:file:public-drive-0",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_url" : null,
+      "source_version" : "fb342cb0b5baad7d9b293969c9aa135421fecbb2b7e79f54359882cc9033d5a3",
+      "title" : "Synthetic document"
+    },
+    "classification_reason" : "Matched sales keyword; deterministic precedence verification, accounts, sales, marketing, office",
+    "extraction_reason" : "SYNTHETIC_TEXT_FIXTURE",
+    "extraction_status" : "EXTRACTED",
+    "source" : {
+      "connector_account_id" : "drive-public-synthetic",
+      "content_hash" : "fb342cb0b5baad7d9b293969c9aa135421fecbb2b7e79f54359882cc9033d5a3",
+      "content_text" : "Quotation for synthetic equipment sales.",
+      "deleted_at" : null,
+      "document_id" : "9f276c1d-d322-34ee-8328-f53a5f36cdb4",
+      "external_id" : "public-drive-0",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "original_mime_type" : "text/plain",
+        "schema_version" : "1",
+        "synthetic" : true
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-17T12:00:00Z",
+      "parent_external_id" : "synthetic-folder",
+      "source_created_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_updated_at" : "2026-10-17T12:00:00Z",
+      "source_version" : "fb342cb0b5baad7d9b293969c9aa135421fecbb2b7e79f54359882cc9033d5a3",
+      "tenant_id" : "test-tenant",
+      "title" : "Synthetic document"
+    }
+  }, {
+    "category" : "marketing",
+    "citation" : {
+      "citation_id" : "D2",
+      "document_id" : "cbb9014f-7075-344c-a596-9c17554f490f",
+      "locator" : "synthetic-drive:file:public-drive-1",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_url" : null,
+      "source_version" : "a07b498b6e6cef665e56c4400c1d77dd7ebd1beead8fafd40c8cbb97ca367d07",
+      "title" : "Synthetic document"
+    },
+    "classification_reason" : "Matched marketing keyword; deterministic precedence verification, accounts, sales, marketing, office",
+    "extraction_reason" : "SYNTHETIC_TEXT_FIXTURE",
+    "extraction_status" : "EXTRACTED",
+    "source" : {
+      "connector_account_id" : "drive-public-synthetic",
+      "content_hash" : "a07b498b6e6cef665e56c4400c1d77dd7ebd1beead8fafd40c8cbb97ca367d07",
+      "content_text" : "Newsletter campaign for synthetic rentals.",
+      "deleted_at" : null,
+      "document_id" : "cbb9014f-7075-344c-a596-9c17554f490f",
+      "external_id" : "public-drive-1",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "original_mime_type" : "text/plain",
+        "schema_version" : "1",
+        "synthetic" : true
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-17T12:00:00Z",
+      "parent_external_id" : "synthetic-folder",
+      "source_created_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_updated_at" : "2026-10-17T12:00:00Z",
+      "source_version" : "a07b498b6e6cef665e56c4400c1d77dd7ebd1beead8fafd40c8cbb97ca367d07",
+      "tenant_id" : "test-tenant",
+      "title" : "Synthetic document"
+    }
+  }, {
+    "category" : "verification",
+    "citation" : {
+      "citation_id" : "D3",
+      "document_id" : "0a0fc4dd-bb0d-385f-8211-9c3da6c482a7",
+      "locator" : "synthetic-drive:file:public-drive-2",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_url" : null,
+      "source_version" : "f6449845861366fef59c59f1ce611a0eb4abf2f9df16c6f6772724852d254f74",
+      "title" : "Synthetic document"
+    },
+    "classification_reason" : "Matched verification keyword; deterministic precedence verification, accounts, sales, marketing, office",
+    "extraction_reason" : "SYNTHETIC_TEXT_FIXTURE",
+    "extraction_status" : "EXTRACTED",
+    "source" : {
+      "connector_account_id" : "drive-public-synthetic",
+      "content_hash" : "f6449845861366fef59c59f1ce611a0eb4abf2f9df16c6f6772724852d254f74",
+      "content_text" : "KYC verification for a synthetic identity.",
+      "deleted_at" : null,
+      "document_id" : "0a0fc4dd-bb0d-385f-8211-9c3da6c482a7",
+      "external_id" : "public-drive-2",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "original_mime_type" : "text/plain",
+        "schema_version" : "1",
+        "synthetic" : true
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-17T12:00:00Z",
+      "parent_external_id" : "synthetic-folder",
+      "source_created_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_updated_at" : "2026-10-17T12:00:00Z",
+      "source_version" : "f6449845861366fef59c59f1ce611a0eb4abf2f9df16c6f6772724852d254f74",
+      "tenant_id" : "test-tenant",
+      "title" : "Synthetic document"
+    }
+  }, {
+    "category" : "office",
+    "citation" : {
+      "citation_id" : "D4",
+      "document_id" : "fd3d543e-9202-307e-9e46-e904906a0993",
+      "locator" : "synthetic-drive:file:public-drive-3",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_url" : null,
+      "source_version" : "63a78032637c1fc23f42227a89282eee1e8d951465d8992a8f09372911183ff3",
+      "title" : "Synthetic document"
+    },
+    "classification_reason" : "General office document; no higher-priority category keyword",
+    "extraction_reason" : "SYNTHETIC_TEXT_FIXTURE",
+    "extraction_status" : "EXTRACTED",
+    "source" : {
+      "connector_account_id" : "drive-public-synthetic",
+      "content_hash" : "63a78032637c1fc23f42227a89282eee1e8d951465d8992a8f09372911183ff3",
+      "content_text" : "Office meeting notes for the synthetic team.",
+      "deleted_at" : null,
+      "document_id" : "fd3d543e-9202-307e-9e46-e904906a0993",
+      "external_id" : "public-drive-3",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "original_mime_type" : "text/plain",
+        "schema_version" : "1",
+        "synthetic" : true
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-17T12:00:00Z",
+      "parent_external_id" : "synthetic-folder",
+      "source_created_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_updated_at" : "2026-10-17T12:00:00Z",
+      "source_version" : "63a78032637c1fc23f42227a89282eee1e8d951465d8992a8f09372911183ff3",
+      "tenant_id" : "test-tenant",
+      "title" : "Synthetic document"
+    }
+  }, {
+    "category" : "accounts",
+    "citation" : {
+      "citation_id" : "D5",
+      "document_id" : "21d0b32f-d13b-3164-9269-7fd5bfbca649",
+      "locator" : "synthetic-drive:file:public-drive-4",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_url" : null,
+      "source_version" : "cc41c927a53613f14329caa0e7b66081f87fff5c760bab69340207f7f0ab20a5",
+      "title" : "Synthetic document"
+    },
+    "classification_reason" : "Matched accounts keyword; deterministic precedence verification, accounts, sales, marketing, office",
+    "extraction_reason" : "SYNTHETIC_TEXT_FIXTURE",
+    "extraction_status" : "EXTRACTED",
+    "source" : {
+      "connector_account_id" : "drive-public-synthetic",
+      "content_hash" : "cc41c927a53613f14329caa0e7b66081f87fff5c760bab69340207f7f0ab20a5",
+      "content_text" : "Confirmed sale invoice INV-B dated 2026-09-20 total USD 500.",
+      "deleted_at" : null,
+      "document_id" : "21d0b32f-d13b-3164-9269-7fd5bfbca649",
+      "external_id" : "public-drive-4",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "original_mime_type" : "text/plain",
+        "schema_version" : "1",
+        "synthetic" : true
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-17T12:00:00Z",
+      "parent_external_id" : "synthetic-folder",
+      "source_created_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "DRIVE",
+      "source_updated_at" : "2026-10-17T12:00:00Z",
+      "source_version" : "cc41c927a53613f14329caa0e7b66081f87fff5c760bab69340207f7f0ab20a5",
+      "tenant_id" : "test-tenant",
+      "title" : "Synthetic document"
+    }
+  } ],
+  "extracted_count" : 5,
+  "file_count" : 5,
+  "fixture_provenance" : "GENERATED_SYNTHETIC_FIXTURES",
+  "generated_at" : "2026-10-17T12:00:00Z",
+  "incomplete_search" : false,
+  "official_schema_available" : false,
+  "practice_format" : "drive-practice-2.0",
+  "practice_schema_version" : "2.0",
+  "provisional_schema" : true,
+  "requested_file_limit" : 5,
+  "schema_version" : "1.0",
+  "scope" : "https://www.googleapis.com/auth/drive.readonly"
+}

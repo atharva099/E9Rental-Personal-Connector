@@ -1,0 +1,495 @@
+{
+  "connector_account_id" : "gmail-reasoning",
+  "coverage" : "FULL",
+  "data_mode" : "SYNTHETIC",
+  "fixture_provenance" : "GENERATED_SYNTHETIC_FIXTURES",
+  "generated_at" : "2026-10-17T12:00:00Z",
+  "message_count" : 9,
+  "messages" : [ {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S1",
+      "document_id" : "adfbc6bf-d652-37b5-8dae-becf1c577787",
+      "locator" : "gmail:message:sale-a",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/sale-a",
+      "source_version" : "7ced1e7b8c03199ac5f682dfc700d868f4798094918cc0d0b4ec0b5740764315",
+      "title" : "Confirmed invoice"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : false,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "007db633857877a3fb28176ad3f4d805c293f405cc8d44c29e44258505a8c17b",
+      "content_text" : "Confirmed sale invoice INV-A dated 2026-09-10 total USD 1000.",
+      "deleted_at" : null,
+      "document_id" : "adfbc6bf-d652-37b5-8dae-becf1c577787",
+      "external_id" : "sale-a",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "SENT" ],
+        "schema_version" : "1",
+        "subject" : "Confirmed invoice",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-09-10T00:00:00Z",
+      "parent_external_id" : "sale-thread",
+      "source_created_at" : "2026-09-10T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "7ced1e7b8c03199ac5f682dfc700d868f4798094918cc0d0b4ec0b5740764315",
+      "tenant_id" : "test-tenant",
+      "title" : "Confirmed invoice"
+    },
+    "unanswered_five_days" : false
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S2",
+      "document_id" : "6b470396-2622-37e1-a601-2b0fd7effc92",
+      "locator" : "gmail:message:pending-old",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/pending-old",
+      "source_version" : "847de270332133af810553a840fba2b1def039d10f6ab6927e4cc41b34698e67",
+      "title" : "Quotation request"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : true,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "db5b7b59aec450fbd143b1fd05fb035374edbf2560049213b00d1a2a19f4cfac",
+      "content_text" : "Please provide a quotation for rental equipment.",
+      "deleted_at" : null,
+      "document_id" : "6b470396-2622-37e1-a601-2b0fd7effc92",
+      "external_id" : "pending-old",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "INBOX" ],
+        "schema_version" : "1",
+        "subject" : "Quotation request",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-10T08:00:00Z",
+      "parent_external_id" : "p1",
+      "source_created_at" : "2026-10-10T08:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "847de270332133af810553a840fba2b1def039d10f6ab6927e4cc41b34698e67",
+      "tenant_id" : "test-tenant",
+      "title" : "Quotation request"
+    },
+    "unanswered_five_days" : true
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S3",
+      "document_id" : "efe11c71-d078-3841-8b77-9a3b4898b86f",
+      "locator" : "gmail:message:pending-boundary",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/pending-boundary",
+      "source_version" : "59299c9f2e12a4602a5bd368444366962d3ca733a5429ae0ceba761fb2a449f4",
+      "title" : "RFQ request"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : true,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "72c0b649d6a4fa2cefe5d2e89cca2b0ab54153ce6ae94be51ae7a041e5ffa936",
+      "content_text" : "Please send pricing for the crane.",
+      "deleted_at" : null,
+      "document_id" : "efe11c71-d078-3841-8b77-9a3b4898b86f",
+      "external_id" : "pending-boundary",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "INBOX" ],
+        "schema_version" : "1",
+        "subject" : "RFQ request",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-12T00:00:00Z",
+      "parent_external_id" : "p2",
+      "source_created_at" : "2026-10-12T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "59299c9f2e12a4602a5bd368444366962d3ca733a5429ae0ceba761fb2a449f4",
+      "tenant_id" : "test-tenant",
+      "title" : "RFQ request"
+    },
+    "unanswered_five_days" : true
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S4",
+      "document_id" : "1c7d0a30-6260-30ae-a2c3-1d7784d9f98e",
+      "locator" : "gmail:message:replied-sale",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/replied-sale",
+      "source_version" : "647ea50441ce9a3d50a89952e0d057a6ddcb161e07a8e8253689267c4d334861",
+      "title" : "Quotation request"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : true,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "600394b0c7d08448ef79c6a7f29641f5d20dce43a0e59df63c37d719a1c3a38d",
+      "content_text" : "Please provide pricing.",
+      "deleted_at" : null,
+      "document_id" : "1c7d0a30-6260-30ae-a2c3-1d7784d9f98e",
+      "external_id" : "replied-sale",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "INBOX" ],
+        "schema_version" : "1",
+        "subject" : "Quotation request",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-09T00:00:00Z",
+      "parent_external_id" : "replied",
+      "source_created_at" : "2026-10-09T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "647ea50441ce9a3d50a89952e0d057a6ddcb161e07a8e8253689267c4d334861",
+      "tenant_id" : "test-tenant",
+      "title" : "Quotation request"
+    },
+    "unanswered_five_days" : false
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S5",
+      "document_id" : "cd056327-e949-3633-a8f5-87ddf1233609",
+      "locator" : "gmail:message:sent-reply",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/sent-reply",
+      "source_version" : "ea083847509ac77308412cec2da50dbe750cdaaa3dd2af0a441c324756f80b9d",
+      "title" : "Quotation response"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : false,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "ce6cd5b52159424ec2deeab83ae3e797bb8a81957e114633b86ac047ffd056d8",
+      "content_text" : "Here is the quotation.",
+      "deleted_at" : null,
+      "document_id" : "cd056327-e949-3633-a8f5-87ddf1233609",
+      "external_id" : "sent-reply",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "SENT" ],
+        "schema_version" : "1",
+        "subject" : "Quotation response",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-11T00:00:00Z",
+      "parent_external_id" : "replied",
+      "source_created_at" : "2026-10-11T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "ea083847509ac77308412cec2da50dbe750cdaaa3dd2af0a441c324756f80b9d",
+      "tenant_id" : "test-tenant",
+      "title" : "Quotation response"
+    },
+    "unanswered_five_days" : false
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S6",
+      "document_id" : "a1bd4982-b11e-3bfd-aa5f-5080ad6064fe",
+      "locator" : "gmail:message:young-sale",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/young-sale",
+      "source_version" : "7c0606fd08ab8db4caa1d997d1db9fecf63079000945b9db7f73d3cf711c0421",
+      "title" : "Quotation request"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : true,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "79a3c2d69eb3741752fb4935d174983bc2bfdb7c5fc31df135ce627cf45cd1ef",
+      "content_text" : "Please send a quotation.",
+      "deleted_at" : null,
+      "document_id" : "a1bd4982-b11e-3bfd-aa5f-5080ad6064fe",
+      "external_id" : "young-sale",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "INBOX" ],
+        "schema_version" : "1",
+        "subject" : "Quotation request",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-12T00:00:00.001Z",
+      "parent_external_id" : "young",
+      "source_created_at" : "2026-10-12T00:00:00.001Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "7c0606fd08ab8db4caa1d997d1db9fecf63079000945b9db7f73d3cf711c0421",
+      "tenant_id" : "test-tenant",
+      "title" : "Quotation request"
+    },
+    "unanswered_five_days" : false
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S7",
+      "document_id" : "3ffae307-8eb6-369e-b871-345bb4851fb9",
+      "locator" : "gmail:message:marketing",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/marketing",
+      "source_version" : "13a8bbf2a4b6aaffb3c721183d5ea334d6abe4920a86308b2c764538f45f5ef3",
+      "title" : "Newsletter"
+    },
+    "classification" : "marketing",
+    "classification_reasons" : [ "Promotional label, unsubscribe header or marketing keyword" ],
+    "inbound" : true,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "79901b6150fcf7e27c6884cd123808b818249232939f4616ea5af27748a2a8b1",
+      "content_text" : "Newsletter promotion.",
+      "deleted_at" : null,
+      "document_id" : "3ffae307-8eb6-369e-b871-345bb4851fb9",
+      "external_id" : "marketing",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "INBOX" ],
+        "schema_version" : "1",
+        "subject" : "Newsletter",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-01T00:00:00Z",
+      "parent_external_id" : "promo",
+      "source_created_at" : "2026-10-01T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "13a8bbf2a4b6aaffb3c721183d5ea334d6abe4920a86308b2c764538f45f5ef3",
+      "tenant_id" : "test-tenant",
+      "title" : "Newsletter"
+    },
+    "unanswered_five_days" : true
+  }, {
+    "attachments" : [ ],
+    "citation" : {
+      "citation_id" : "S8",
+      "document_id" : "5ac4697a-369a-348c-83cb-cc96914aa5da",
+      "locator" : "gmail:message:outgoing",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/outgoing",
+      "source_version" : "e2d34cad29e9233b28dabf20d19ee728fac691d81be88172e29f30de5451aa84",
+      "title" : "Quotation response"
+    },
+    "classification" : "sales",
+    "classification_reasons" : [ "Sales or transaction keyword in subject/body" ],
+    "inbound" : false,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "3bd19905df347d258ae4af8e15d70c0eed719f98141c20786137fe4555b91031",
+      "content_text" : "Quotation attached.",
+      "deleted_at" : null,
+      "document_id" : "5ac4697a-369a-348c-83cb-cc96914aa5da",
+      "external_id" : "outgoing",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "SENT" ],
+        "schema_version" : "1",
+        "subject" : "Quotation response",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-01T00:00:00Z",
+      "parent_external_id" : "out",
+      "source_created_at" : "2026-10-01T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "e2d34cad29e9233b28dabf20d19ee728fac691d81be88172e29f30de5451aa84",
+      "tenant_id" : "test-tenant",
+      "title" : "Quotation response"
+    },
+    "unanswered_five_days" : false
+  }, {
+    "attachments" : [ {
+      "attachment_id" : "synthetic-attachment-invoice.pdf",
+      "business_critical" : true,
+      "filename" : "invoice.pdf",
+      "mime_type" : "application/octet-stream",
+      "reasons" : [ "Invoice filename" ],
+      "size" : 12
+    }, {
+      "attachment_id" : "synthetic-attachment-purchase_order.pdf",
+      "business_critical" : true,
+      "filename" : "purchase_order.pdf",
+      "mime_type" : "application/octet-stream",
+      "reasons" : [ "Purchase order filename" ],
+      "size" : 12
+    }, {
+      "attachment_id" : "synthetic-attachment-quotation.docx",
+      "business_critical" : true,
+      "filename" : "quotation.docx",
+      "mime_type" : "application/octet-stream",
+      "reasons" : [ "Quotation filename" ],
+      "size" : 12
+    }, {
+      "attachment_id" : "synthetic-attachment-contract.pdf",
+      "business_critical" : true,
+      "filename" : "contract.pdf",
+      "mime_type" : "application/octet-stream",
+      "reasons" : [ "Contract/agreement filename" ],
+      "size" : 12
+    }, {
+      "attachment_id" : "synthetic-attachment-kyc.pdf",
+      "business_critical" : true,
+      "filename" : "kyc.pdf",
+      "mime_type" : "application/octet-stream",
+      "reasons" : [ "KYC/identity document filename" ],
+      "size" : 12
+    } ],
+    "citation" : {
+      "citation_id" : "S9",
+      "document_id" : "a1d0e6a9-ff2b-3e64-a270-fb5462fefa1b",
+      "locator" : "gmail:message:public-critical",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/public-critical",
+      "source_version" : "acaa3852c9f145ccb4bd23d95490fac90519ba0bdc526483117a169635d1b53b",
+      "title" : "Document review"
+    },
+    "classification" : "other",
+    "classification_reasons" : [ "No configured sales or marketing signal" ],
+    "inbound" : true,
+    "source" : {
+      "connector_account_id" : "gmail-reasoning",
+      "content_hash" : "c33164c3263376d910c7546665e4d078e2f3b0a17e17b22447796e4c1c0015db",
+      "content_text" : "Please review these documents.",
+      "deleted_at" : null,
+      "document_id" : "a1d0e6a9-ff2b-3e64-a270-fb5462fefa1b",
+      "external_id" : "public-critical",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "extraction_status" : "EXTRACTED",
+        "from" : "sender@example.test",
+        "labels" : [ "INBOX" ],
+        "schema_version" : "1",
+        "subject" : "Document review",
+        "to" : ""
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-10T00:00:00Z",
+      "parent_external_id" : "public-critical-thread",
+      "source_created_at" : "2026-10-10T00:00:00Z",
+      "source_type" : "GMAIL",
+      "source_updated_at" : null,
+      "source_version" : "acaa3852c9f145ccb4bd23d95490fac90519ba0bdc526483117a169635d1b53b",
+      "tenant_id" : "test-tenant",
+      "title" : "Document review"
+    },
+    "unanswered_five_days" : true
+  } ],
+  "official_schema_available" : false,
+  "practice_format" : "gmail-practice-2.0",
+  "practice_schema_version" : "2.0",
+  "provisional_schema" : true,
+  "reference_date" : "2026-10-17",
+  "requested_thread_limit" : null,
+  "schema_version" : "1.0",
+  "scope" : "https://www.googleapis.com/auth/gmail.readonly",
+  "tenant_id" : "test-tenant",
+  "thread_count" : 8,
+  "unanswered_count" : 4,
+  "unanswered_messages" : [ {
+    "citation" : {
+      "citation_id" : "S2",
+      "document_id" : "6b470396-2622-37e1-a601-2b0fd7effc92",
+      "locator" : "gmail:message:pending-old",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/pending-old",
+      "source_version" : "847de270332133af810553a840fba2b1def039d10f6ab6927e4cc41b34698e67",
+      "title" : "Quotation request"
+    },
+    "document_id" : "6b470396-2622-37e1-a601-2b0fd7effc92",
+    "source_id" : "pending-old"
+  }, {
+    "citation" : {
+      "citation_id" : "S3",
+      "document_id" : "efe11c71-d078-3841-8b77-9a3b4898b86f",
+      "locator" : "gmail:message:pending-boundary",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/pending-boundary",
+      "source_version" : "59299c9f2e12a4602a5bd368444366962d3ca733a5429ae0ceba761fb2a449f4",
+      "title" : "RFQ request"
+    },
+    "document_id" : "efe11c71-d078-3841-8b77-9a3b4898b86f",
+    "source_id" : "pending-boundary"
+  }, {
+    "citation" : {
+      "citation_id" : "S7",
+      "document_id" : "3ffae307-8eb6-369e-b871-345bb4851fb9",
+      "locator" : "gmail:message:marketing",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/marketing",
+      "source_version" : "13a8bbf2a4b6aaffb3c721183d5ea334d6abe4920a86308b2c764538f45f5ef3",
+      "title" : "Newsletter"
+    },
+    "document_id" : "3ffae307-8eb6-369e-b871-345bb4851fb9",
+    "source_id" : "marketing"
+  }, {
+    "citation" : {
+      "citation_id" : "S9",
+      "document_id" : "a1d0e6a9-ff2b-3e64-a270-fb5462fefa1b",
+      "locator" : "gmail:message:public-critical",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "GMAIL",
+      "source_url" : "https://mail.google.com/mail/u/0/#all/public-critical",
+      "source_version" : "acaa3852c9f145ccb4bd23d95490fac90519ba0bdc526483117a169635d1b53b",
+      "title" : "Document review"
+    },
+    "document_id" : "a1d0e6a9-ff2b-3e64-a270-fb5462fefa1b",
+    "source_id" : "public-critical"
+  } ]
+}

@@ -1,0 +1,638 @@
+{
+  "coverage" : "CURRENT_SELECTED_GROUPS",
+  "data_mode" : "SIMULATED",
+  "fixture_provenance" : "GENERATED_SYNTHETIC_FIXTURES",
+  "generated_at" : "2026-10-17T12:00:00Z",
+  "groups" : [ {
+    "action_items" : [ {
+      "end_offset" : 44,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-action" ],
+      "text" : "Action: please prepare the safety checklist."
+    } ],
+    "commitments" : [ {
+      "end_offset" : 46,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-other" ],
+      "text" : "Decision OTHER: We agreed to use another site."
+    } ],
+    "decisions" : [ {
+      "assignee_id" : null,
+      "due_date" : null,
+      "end_offset" : 46,
+      "kind" : "DECISION",
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "status" : "RECORDED_AGREEMENT",
+      "supporting_message_ids" : [ "sim-other" ],
+      "task" : "Decision OTHER: We agreed to use another site.",
+      "text" : "Decision OTHER: We agreed to use another site."
+    } ],
+    "group_id" : "sim-group-operations",
+    "group_name" : "Synthetic Operations",
+    "message_count" : 2,
+    "metadata_updated_at" : "2026-10-16T12:00:00Z",
+    "metadata_version" : 1,
+    "participant_interpretations" : [ {
+      "action_items" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 44,
+        "kind" : "ACTION",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "REQUESTED",
+        "supporting_message_ids" : [ "sim-action" ],
+        "task" : "Action: please prepare the safety checklist.",
+        "text" : "Action: please prepare the safety checklist."
+      } ],
+      "commitments" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 46,
+        "kind" : "COMMITMENT",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-other" ],
+        "task" : "Decision OTHER: We agreed to use another site.",
+        "text" : "Decision OTHER: We agreed to use another site."
+      } ],
+      "decisions" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 46,
+        "kind" : "DECISION",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "RECORDED_AGREEMENT",
+        "supporting_message_ids" : [ "sim-other" ],
+        "task" : "Decision OTHER: We agreed to use another site.",
+        "text" : "Decision OTHER: We agreed to use another site."
+      } ],
+      "requests" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 44,
+        "kind" : "REQUEST",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-action" ],
+        "task" : "Action: please prepare the safety checklist.",
+        "text" : "Action: please prepare the safety checklist."
+      } ],
+      "sender_id" : "sim-user-test"
+    } ],
+    "participants" : [ {
+      "display_name" : "Synthetic Operator",
+      "number" : null,
+      "sender_id" : "sim-user-test"
+    } ],
+    "requests" : [ {
+      "assignee_id" : null,
+      "due_date" : null,
+      "end_offset" : 44,
+      "kind" : "REQUEST",
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "status" : "EXPLICIT",
+      "supporting_message_ids" : [ "sim-action" ],
+      "task" : "Action: please prepare the safety checklist.",
+      "text" : "Action: please prepare the safety checklist."
+    } ],
+    "summary" : [ {
+      "end_offset" : 46,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-other" ],
+      "text" : "Decision OTHER: We agreed to use another site."
+    }, {
+      "end_offset" : 44,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-action" ],
+      "text" : "Action: please prepare the safety checklist."
+    } ]
+  }, {
+    "action_items" : [ ],
+    "commitments" : [ {
+      "end_offset" : 53,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-old" ],
+      "text" : "Decision OLD: We agreed to use the previous schedule."
+    }, {
+      "end_offset" : 58,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-agree-1" ],
+      "text" : "Decision SITE-A: We agreed to deliver the crane on Monday."
+    }, {
+      "end_offset" : 65,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-agree-2" ],
+      "text" : "Decision SITE-B: The team agreed to inspect the safety equipment."
+    }, {
+      "end_offset" : 43,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-commit" ],
+      "text" : "I will inspect the equipment on 2026-10-20."
+    } ],
+    "decisions" : [ {
+      "assignee_id" : null,
+      "due_date" : null,
+      "end_offset" : 53,
+      "kind" : "DECISION",
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "status" : "RECORDED_AGREEMENT",
+      "supporting_message_ids" : [ "sim-old" ],
+      "task" : "Decision OLD: We agreed to use the previous schedule.",
+      "text" : "Decision OLD: We agreed to use the previous schedule."
+    }, {
+      "assignee_id" : null,
+      "due_date" : null,
+      "end_offset" : 58,
+      "kind" : "DECISION",
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "status" : "RECORDED_AGREEMENT",
+      "supporting_message_ids" : [ "sim-agree-1" ],
+      "task" : "Decision SITE-A: We agreed to deliver the crane on Monday.",
+      "text" : "Decision SITE-A: We agreed to deliver the crane on Monday."
+    }, {
+      "assignee_id" : null,
+      "due_date" : null,
+      "end_offset" : 65,
+      "kind" : "DECISION",
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "status" : "RECORDED_AGREEMENT",
+      "supporting_message_ids" : [ "sim-agree-2" ],
+      "task" : "Decision SITE-B: The team agreed to inspect the safety equipment.",
+      "text" : "Decision SITE-B: The team agreed to inspect the safety equipment."
+    } ],
+    "group_id" : "sim-group-rentals",
+    "group_name" : "Synthetic Site team",
+    "message_count" : 6,
+    "metadata_updated_at" : "2026-10-16T12:00:00Z",
+    "metadata_version" : 1,
+    "participant_interpretations" : [ {
+      "action_items" : [ ],
+      "commitments" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 53,
+        "kind" : "COMMITMENT",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-old" ],
+        "task" : "Decision OLD: We agreed to use the previous schedule.",
+        "text" : "Decision OLD: We agreed to use the previous schedule."
+      }, {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 58,
+        "kind" : "COMMITMENT",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-agree-1" ],
+        "task" : "Decision SITE-A: We agreed to deliver the crane on Monday.",
+        "text" : "Decision SITE-A: We agreed to deliver the crane on Monday."
+      }, {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 65,
+        "kind" : "COMMITMENT",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-agree-2" ],
+        "task" : "Decision SITE-B: The team agreed to inspect the safety equipment.",
+        "text" : "Decision SITE-B: The team agreed to inspect the safety equipment."
+      }, {
+        "assignee_id" : "sim-user-test",
+        "due_date" : null,
+        "end_offset" : 43,
+        "kind" : "COMMITMENT",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-commit" ],
+        "task" : "I will inspect the equipment on 2026-10-20.",
+        "text" : "I will inspect the equipment on 2026-10-20."
+      } ],
+      "decisions" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 53,
+        "kind" : "DECISION",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "RECORDED_AGREEMENT",
+        "supporting_message_ids" : [ "sim-old" ],
+        "task" : "Decision OLD: We agreed to use the previous schedule.",
+        "text" : "Decision OLD: We agreed to use the previous schedule."
+      }, {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 58,
+        "kind" : "DECISION",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "RECORDED_AGREEMENT",
+        "supporting_message_ids" : [ "sim-agree-1" ],
+        "task" : "Decision SITE-A: We agreed to deliver the crane on Monday.",
+        "text" : "Decision SITE-A: We agreed to deliver the crane on Monday."
+      }, {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 65,
+        "kind" : "DECISION",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "RECORDED_AGREEMENT",
+        "supporting_message_ids" : [ "sim-agree-2" ],
+        "task" : "Decision SITE-B: The team agreed to inspect the safety equipment.",
+        "text" : "Decision SITE-B: The team agreed to inspect the safety equipment."
+      } ],
+      "requests" : [ {
+        "assignee_id" : null,
+        "due_date" : null,
+        "end_offset" : 39,
+        "kind" : "REQUEST",
+        "sender_id" : "sim-user-test",
+        "start_offset" : 0,
+        "status" : "EXPLICIT",
+        "supporting_message_ids" : [ "sim-request" ],
+        "task" : "Could you send the equipment quotation?",
+        "text" : "Could you send the equipment quotation?"
+      } ],
+      "sender_id" : "sim-user-test"
+    } ],
+    "participants" : [ {
+      "display_name" : "Synthetic Operator",
+      "number" : "sim-number-001",
+      "sender_id" : "sim-user-test"
+    } ],
+    "requests" : [ {
+      "assignee_id" : null,
+      "due_date" : null,
+      "end_offset" : 39,
+      "kind" : "REQUEST",
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "status" : "EXPLICIT",
+      "supporting_message_ids" : [ "sim-request" ],
+      "task" : "Could you send the equipment quotation?",
+      "text" : "Could you send the equipment quotation?"
+    } ],
+    "summary" : [ {
+      "end_offset" : 53,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-old" ],
+      "text" : "Decision OLD: We agreed to use the previous schedule."
+    }, {
+      "end_offset" : 58,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-agree-1" ],
+      "text" : "Decision SITE-A: We agreed to deliver the crane on Monday."
+    }, {
+      "end_offset" : 65,
+      "sender_id" : "sim-user-test",
+      "start_offset" : 0,
+      "supporting_message_ids" : [ "sim-agree-2" ],
+      "text" : "Decision SITE-B: The team agreed to inspect the safety equipment."
+    } ]
+  } ],
+  "live_integration" : false,
+  "message_count" : 8,
+  "messages" : [ {
+    "citation" : {
+      "citation_id" : "W1",
+      "document_id" : "909cbea5-2881-36d8-85ca-daa5d71ca457",
+      "locator" : "simulated-whatsapp:group:sim-group-rentals:message:sim-old",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "68dc26a55bf46b501e576358eabf51b2f5b5dd1ae4da561afda71abe6cd13d8d"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "7ce8a041bae95d0d3cfa3a3e3bfbb824cd9a4f7a2f6851f27a55c4263bbf2116",
+      "content_text" : "Decision OLD: We agreed to use the previous schedule.",
+      "deleted_at" : null,
+      "document_id" : "909cbea5-2881-36d8-85ca-daa5d71ca457",
+      "external_id" : "sim-old",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : "sim-number-001",
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-rentals",
+        "group_name" : "Synthetic Site team",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-11T23:59:59Z",
+      "parent_external_id" : "sim-group-rentals",
+      "source_created_at" : "2026-10-11T23:59:59Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "68dc26a55bf46b501e576358eabf51b2f5b5dd1ae4da561afda71abe6cd13d8d",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-rentals"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W2",
+      "document_id" : "eeacfc35-2cd8-3f64-82fc-7a8d0d95aef6",
+      "locator" : "simulated-whatsapp:group:sim-group-rentals:message:sim-agree-1",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "3247b05060389dd12c86261b356642a5a21d87696dcb26fcb08525af93bb3839"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "d8b2a2bbecccb4c7ead312d81526bb673866677b656b3eccccce141f3345e5fe",
+      "content_text" : "Decision SITE-A: We agreed to deliver the crane on Monday.",
+      "deleted_at" : null,
+      "document_id" : "eeacfc35-2cd8-3f64-82fc-7a8d0d95aef6",
+      "external_id" : "sim-agree-1",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : "sim-number-001",
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-rentals",
+        "group_name" : "Synthetic Site team",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-12T00:00:00Z",
+      "parent_external_id" : "sim-group-rentals",
+      "source_created_at" : "2026-10-12T00:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "3247b05060389dd12c86261b356642a5a21d87696dcb26fcb08525af93bb3839",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-rentals"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W3",
+      "document_id" : "1b53e1c4-6d62-31f4-8a95-d948273185e7",
+      "locator" : "simulated-whatsapp:group:sim-group-rentals:message:sim-agree-2",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "03f9c84c055d121240d9c9e4f4200c7754b58b5a77f18de6ddb4c4d1950c8518"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "7fcc321461dac4463aa9508f84a74e43867d9bd383729b4f5ae8c7663d005bf8",
+      "content_text" : "Decision SITE-B: The team agreed to inspect the safety equipment.",
+      "deleted_at" : null,
+      "document_id" : "1b53e1c4-6d62-31f4-8a95-d948273185e7",
+      "external_id" : "sim-agree-2",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : "sim-number-001",
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-rentals",
+        "group_name" : "Synthetic Site team",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-16T08:00:00Z",
+      "parent_external_id" : "sim-group-rentals",
+      "source_created_at" : "2026-10-16T08:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "03f9c84c055d121240d9c9e4f4200c7754b58b5a77f18de6ddb4c4d1950c8518",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-rentals"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W4",
+      "document_id" : "bb26972a-5a27-39dd-8623-de8699bbe94a",
+      "locator" : "simulated-whatsapp:group:sim-group-rentals:message:sim-proposal",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "0100d62c2b614dff28bef879d7600a13ba8a70e9858898e7c14698a865ff1f8d"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "26aba6a32396a4e649aca3703138f0154fa6db0f434cfe368a1a28e850c2a28c",
+      "content_text" : "Could we deliver on Tuesday? This is a proposal.",
+      "deleted_at" : null,
+      "document_id" : "bb26972a-5a27-39dd-8623-de8699bbe94a",
+      "external_id" : "sim-proposal",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : "sim-number-001",
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-rentals",
+        "group_name" : "Synthetic Site team",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-16T09:00:00Z",
+      "parent_external_id" : "sim-group-rentals",
+      "source_created_at" : "2026-10-16T09:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "0100d62c2b614dff28bef879d7600a13ba8a70e9858898e7c14698a865ff1f8d",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-rentals"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W5",
+      "document_id" : "e8f5baf5-dcff-3e19-9df1-55170ec24ba3",
+      "locator" : "simulated-whatsapp:group:sim-group-operations:message:sim-other",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "6d529999d616f7cff7a90526ad6a4ab26000d845b3b6af7600437f5a72fa9ebe"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "8d80f887c22282dbae4b65ae14ef25956939c2ebe83c5a3f1cdfd26f1d6e21e9",
+      "content_text" : "Decision OTHER: We agreed to use another site.",
+      "deleted_at" : null,
+      "document_id" : "e8f5baf5-dcff-3e19-9df1-55170ec24ba3",
+      "external_id" : "sim-other",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : null,
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-operations",
+        "group_name" : "Synthetic Operations",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-16T10:00:00Z",
+      "parent_external_id" : "sim-group-operations",
+      "source_created_at" : "2026-10-16T10:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "6d529999d616f7cff7a90526ad6a4ab26000d845b3b6af7600437f5a72fa9ebe",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-operations"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W6",
+      "document_id" : "52323072-0e47-3b11-b8dc-d901570e61b8",
+      "locator" : "simulated-whatsapp:group:sim-group-rentals:message:sim-request",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "95ae6e181e0649e911ed1b975565603f76c117df9bf753023bebb5b34a34f896"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "b48eb57b6b4b387aa25902eb58a0e80a8777657a47550badf7f0a81fec35109b",
+      "content_text" : "Could you send the equipment quotation?",
+      "deleted_at" : null,
+      "document_id" : "52323072-0e47-3b11-b8dc-d901570e61b8",
+      "external_id" : "sim-request",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : "sim-number-001",
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-rentals",
+        "group_name" : "Synthetic Site team",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-16T12:00:00Z",
+      "parent_external_id" : "sim-group-rentals",
+      "source_created_at" : "2026-10-16T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "95ae6e181e0649e911ed1b975565603f76c117df9bf753023bebb5b34a34f896",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-rentals"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W7",
+      "document_id" : "cef34bb3-0c31-3803-af95-b7989e727371",
+      "locator" : "simulated-whatsapp:group:sim-group-rentals:message:sim-commit",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "f2de3cd150278fc8dca18195c1b9051d3e6d132628ca1468e8c60225f7d9deae"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "96ca3cf7621b9c27d6609a3e25077a98b79a19b57508d82ab7ea587ddc15ddba",
+      "content_text" : "I will inspect the equipment on 2026-10-20.",
+      "deleted_at" : null,
+      "document_id" : "cef34bb3-0c31-3803-af95-b7989e727371",
+      "external_id" : "sim-commit",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : "sim-number-001",
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-rentals",
+        "group_name" : "Synthetic Site team",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-16T12:01:00Z",
+      "parent_external_id" : "sim-group-rentals",
+      "source_created_at" : "2026-10-16T12:01:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "f2de3cd150278fc8dca18195c1b9051d3e6d132628ca1468e8c60225f7d9deae",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-rentals"
+    }
+  }, {
+    "citation" : {
+      "citation_id" : "W8",
+      "document_id" : "e18dcf44-75a8-312b-8582-f03473d49e82",
+      "locator" : "simulated-whatsapp:group:sim-group-operations:message:sim-action",
+      "retrieved_at" : "2026-10-17T12:00:00Z",
+      "source_type" : "WHATSAPP",
+      "source_url" : null,
+      "source_version" : "59d6a605f3c4431e1d9c5c57ad1b1ed1ca5439f60ed29def5bbc0149244e1ac9"
+    },
+    "source" : {
+      "connector_account_id" : "sim-account-test",
+      "content_hash" : "fc1b825ddf0e977634ed8d1e49ea82c17bd626333d3de72c0c408d442c82b965",
+      "content_text" : "Action: please prepare the safety checklist.",
+      "deleted_at" : null,
+      "document_id" : "e18dcf44-75a8-312b-8582-f03473d49e82",
+      "external_id" : "sim-action",
+      "ingested_at" : "2026-10-17T12:00:00Z",
+      "last_synced_at" : "2026-10-17T12:00:00Z",
+      "metadata" : {
+        "current_sender_display_name" : "Synthetic Operator",
+        "current_sender_number" : null,
+        "data_mode" : "SIMULATED",
+        "group_id" : "sim-group-operations",
+        "group_name" : "Synthetic Operations",
+        "metadata_version" : 1,
+        "schema_version" : "1",
+        "sender_id" : "sim-user-test"
+      },
+      "mime_type" : "text/plain",
+      "occurred_at" : "2026-10-16T12:02:00Z",
+      "parent_external_id" : "sim-group-operations",
+      "source_created_at" : "2026-10-16T12:02:00Z",
+      "source_type" : "WHATSAPP",
+      "source_updated_at" : null,
+      "source_version" : "59d6a605f3c4431e1d9c5c57ad1b1ed1ca5439f60ed29def5bbc0149244e1ac9",
+      "tenant_id" : "test-tenant",
+      "title" : "Simulated group sim-group-operations"
+    }
+  } ],
+  "official_schema_available" : false,
+  "practice_format" : "whatsapp-practice-2.0",
+  "practice_schema_version" : "2.0",
+  "provisional_schema" : true,
+  "schema_version" : "1.0",
+  "selected_groups" : [ "sim-group-operations", "sim-group-rentals" ]
+}
