@@ -44,10 +44,22 @@ The Google adapters use HTTPS REST APIs. The runtime carries provider provenance
 ## Requirements
 
 - Windows with PowerShell 7 for the supplied launch/verification helpers.
+- Git for Windows, with `git` available in PowerShell. The Personal launcher checks `git worktree list` metadata before using a runtime directory.
 - Java 21 and Maven 3.6.3+.
 - Node.js 24.15+ in the 24.x line and npm; verified with Node 24.19.0/npm 11.17.0.
 - Free loopback ports: 8081 for synthetic backend, 5173 for frontend; 8080 is used by the optional normal Google runtime.
 - Python 3 for the optional standard-library publication audit.
+
+## Clone the repository
+
+Clone with Git (the Personal launcher needs the clone's Git worktree metadata; a downloaded ZIP is not suitable for Personal startup):
+
+```powershell
+git clone https://github.com/atharva099/E9Rental-Personal-Connector.git
+cd E9Rental-Personal-Connector
+```
+
+For your own Gmail account, follow the [Personal Gmail setup guide](docs/PERSONAL_GMAIL_SETUP.md).
 
 Commands below start from the cloned repository root. Keep the runtime directory outside every checkout. The local scripts support -PrivateDirectory; the example uses Windows LocalAppData rather than requiring the original developer's D: drive.
 

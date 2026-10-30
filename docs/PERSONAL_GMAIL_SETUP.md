@@ -7,6 +7,7 @@ Personal Gmail V1 is read-only and bounded. Search and Ask retrieve only the app
 ## Requirements
 
 - Windows and PowerShell 7 (the supplied launch helpers are PowerShell scripts).
+- Git for Windows, with `git` available in PowerShell. The launcher checks `git worktree list` to keep private runtime files outside registered checkouts; clone the project with Git rather than downloading a ZIP.
 - Java 21 and Maven 3.6.3 or later.
 - Node.js 24.x (24.15 or later) and npm.
 - A Google account you own and control, and your own Google Cloud project.
