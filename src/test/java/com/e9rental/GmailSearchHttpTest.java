@@ -65,6 +65,19 @@ class GmailSearchHttpTest {
         verifyNoInteractions(retrieval);
     }
 
+    @Test void acceptsLowercaseKeywordFromDefaultReact5173Origin() {
+        when(retrieval.retrieve(any(GmailSearchPlan.class),any(GmailRequestBudget.class)))
+            .thenReturn(new RetrievalResult(List.of(liveRecord()),false,null));
+        String origin="http://127.0.0.1:5173";
+        var approved=post("/api/gmail/search/approval",Map.of("keyword","linkedin"),TOKEN,SESSION,origin);
+        assertThat(approved.getStatusCode()).isEqualTo(HttpStatus.OK);
+        var result=post("/api/gmail/search",Map.of("approval_token",approved.getBody().path("approval_token").asText()),
+            TOKEN,SESSION,origin);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+        verify(retrieval).retrieve(argThat((GmailSearchPlan plan)->plan.maxMessages()==20 &&
+            plan.topicKeywords().equals(List.of("linkedin"))),any(GmailRequestBudget.class));
+    }
+
     @Test void returnsTransientMinimalRowsAndOpaqueViewerSelectionAfterSingleApproval() {
         when(retrieval.retrieve(any(GmailSearchPlan.class),any(GmailRequestBudget.class))).thenReturn(new RetrievalResult(List.of(liveRecord()),true,null));
         var approved=post("/api/gmail/search/approval",filters(),TOKEN,SESSION,ORIGIN);

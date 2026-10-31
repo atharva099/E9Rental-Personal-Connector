@@ -32,7 +32,7 @@ public final class GmailMessageViewController {
 
     @org.springframework.beans.factory.annotation.Autowired
     public GmailMessageViewController(GmailMessageViewService service,GmailViewerOperationExecutor operations,ObjectMapper json,
-            @Value("${PERSONAL_FRONTEND_ORIGINS:http://127.0.0.1:5176,http://localhost:5176}") String origins) {
+            @Value("${PERSONAL_FRONTEND_ORIGINS:http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:5176,http://localhost:5176}") String origins) {
         this(service,operations,json,origins,GmailRequestBudget::singleMessageView);
     }
     /** Test seam for short deterministic deadlines; production uses the fixed 18-second budget. */

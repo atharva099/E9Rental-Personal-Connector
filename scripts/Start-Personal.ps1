@@ -27,7 +27,12 @@ if (-not (Test-Path -LiteralPath $ApplicationJar -PathType Leaf)) { throw 'Packa
 function Resolve-AbsoluteDirectoryPath([string]$Path,[string]$SettingName) {
     if ([string]::IsNullOrWhiteSpace($Path)) { throw "$SettingName must be set to an absolute external directory." }
     $candidate = $Path.Trim()
-    if (-not [IO.Path]::IsPathFullyQualified($candidate)) { throw "$SettingName must be set to an absolute external directory." }
+    # Windows PowerShell 5.1 runs on .NET Framework, which does not provide
+    # Path.IsPathFullyQualified. Accept only drive-rooted or complete UNC paths;
+    # this rejects drive-relative (D:folder) and current-drive-rooted (\folder) paths.
+    $driveQualified = $candidate -match '^[A-Za-z]:[\\/]'
+    $uncQualified = $candidate -match '^\\\\[^\\]+\\[^\\]+(?:\\|$)'
+    if (-not ($driveQualified -or $uncQualified)) { throw "$SettingName must be set to an absolute external directory." }
     $resolved = [IO.Path]::GetFullPath($candidate)
     $root = [IO.Path]::GetPathRoot($resolved)
     if ($resolved.Length -gt $root.Length) {

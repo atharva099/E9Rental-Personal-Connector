@@ -43,11 +43,11 @@ The Google adapters use HTTPS REST APIs. The runtime carries provider provenance
 
 ## Requirements
 
-- Windows with PowerShell 7 for the supplied launch/verification helpers.
+- Windows with Windows PowerShell 5.1 for Personal Gmail startup (PowerShell 7 can also invoke the Personal launchers). Historical SANDBOX helpers have separate instructions.
 - Git for Windows, with `git` available in PowerShell. The Personal launcher checks `git worktree list` metadata before using a runtime directory.
 - Java 21 and Maven 3.6.3+.
 - Node.js 24.15+ in the 24.x line and npm; verified with Node 24.19.0/npm 11.17.0.
-- Free loopback ports: 8081 for synthetic backend, 5173 for frontend; 8080 is used by the optional normal Google runtime.
+- Free loopback ports: **8083 for Personal Gmail backend and 5173 for frontend**. The separate synthetic demo below uses backend port 8081; do not run both frontends on 5173 at once.
 - Python 3 for the optional standard-library publication audit.
 
 ## Clone the repository
@@ -60,6 +60,23 @@ cd E9Rental-Personal-Connector
 ```
 
 For your own Gmail account, follow the [Personal Gmail setup guide](docs/PERSONAL_GMAIL_SETUP.md).
+
+## Start Personal Gmail
+
+**First time:** follow the guide to create your own Google Cloud project and Desktop OAuth client, build with `mvn -B clean verify`, install frontend dependencies with `npm ci`, initialize a new external runtime explicitly, and complete manual Google consent. H2 is embedded; no database server is needed. Each developer uses their own credentials and approved Gmail account.
+
+**Later starts:** reuse that initialized, authorized runtime and the existing JAR. From the repository root, in one PowerShell window:
+
+```powershell
+$privateDirectory = Read-Host 'Absolute path to your existing Personal runtime'
+$clientFile = Read-Host 'Absolute path to your own Desktop OAuth client JSON'
+$env:CHALLENGE_RUNTIME_DIR = Read-Host 'Absolute path reserved for your separate Challenge runtime'
+$env:PERSONAL_GMAIL_ACCOUNT = Read-Host 'Your approved Gmail account'
+$applicationJar = Join-Path (Get-Location) 'target/connector-practice-0.0.1-SNAPSHOT.jar'
+.\scripts\Start-PersonalDemo.ps1 -PrivateDirectory $privateDirectory -ClientFile $clientFile -ApplicationJar $applicationJar -ApprovePersonalGoogleAccess
+```
+
+The launcher verifies the existing runtime, starts the backend on **127.0.0.1:8083**, then starts the frontend on **127.0.0.1:5173** with the matching proxy. It does not build, install dependencies, initialize data or start OAuth consent. Enter the existing runtime's local API token manually in the dashboard. When operations are idle, press **Q** (or Ctrl+C) in the launcher window to stop; cleanup forcibly terminates only launcher-owned process trees. OAuth consent remains manual if reauthorization is needed. Personal Gmail V1 is read-only and bounded; Drive, WhatsApp, export, sync and persistent indexing are unavailable in this Personal workflow.
 
 Commands below start from the cloned repository root. Keep the runtime directory outside every checkout. The local scripts support -PrivateDirectory; the example uses Windows LocalAppData rather than requiring the original developer's D: drive.
 

@@ -43,7 +43,7 @@ public final class GmailSearchController {
 
     @org.springframework.beans.factory.annotation.Autowired
     public GmailSearchController(GmailDirectSearchService service,com.e9rental.service.GmailSearchOperationExecutor executor,
-            @Value("${PERSONAL_FRONTEND_ORIGINS:http://127.0.0.1:5176,http://localhost:5176}") String origins,
+            @Value("${PERSONAL_FRONTEND_ORIGINS:http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:5176,http://localhost:5176}") String origins,
             ObjectMapper json) {
         this(service,executor,origins,json,GmailRequestBudget::searchApproval,GmailRequestBudget::directSearch);
     }

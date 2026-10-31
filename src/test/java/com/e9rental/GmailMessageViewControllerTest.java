@@ -43,6 +43,19 @@ class GmailMessageViewControllerTest {
         assertThat((java.util.Map<String,String>)response.getBody()).containsEntry("approval_token","synthetic-one-use-approval");
         verify(service,times(1)).approve("synthetic-selection-handle",new GmailMessageSelectionRegistry.RequestScope(PRINCIPAL,SESSION));
     }
+    @Test void documentedFrontendOriginOnPort5173CanRequestViewerApproval() throws Exception {
+        String defaults="http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:5176,http://localhost:5176";
+        try(var operations=new com.e9rental.service.GmailViewerOperationExecutor()) {
+            var documentedOriginController=new GmailMessageViewController(service,operations,Fixtures.JSON,defaults);
+            var request=request("{\"selection_id\":\"synthetic-selection-handle\"}");
+            request.removeHeader("Origin");request.addHeader("Origin","http://127.0.0.1:5173");
+            when(service.approve("synthetic-selection-handle",new GmailMessageSelectionRegistry.RequestScope(PRINCIPAL,SESSION)))
+                .thenReturn("synthetic-one-use-approval");
+            var response=documentedOriginController.approve(request);
+            assertThat(response.getStatusCode().value()).isEqualTo(200);
+            verify(service,times(1)).approve("synthetic-selection-handle",new GmailMessageSelectionRegistry.RequestScope(PRINCIPAL,SESSION));
+        }
+    }
     @Test void crossOriginAndMalformedApprovalRequestsAreRejectedBeforeService() {
         var cross=request("{\"selection_id\":\"synthetic-selection-handle\"}");cross.removeHeader("Origin");cross.addHeader("Origin","http://attacker.invalid");
         assertThatThrownBy(()->controller.approve(cross)).isInstanceOf(GmailFailure.class);

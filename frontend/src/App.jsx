@@ -100,7 +100,7 @@ export default function App() {
       clientSessionId: clientSession.current || undefined }), value => {
       if (!validAnswer(value)) throw new ApiError(502, 'Unexpected answer format. No answer was displayed.');
       setAnswer(value); setAnswerSearchMode(liveRequest ? 'GMAIL_REQUEST' : 'LOCAL');
-    }, setAskError, () => { askInFlight.current = false; setAsking(false); });
+    }, setAskError, () => { askInFlight.current = false; setAsking(false); }, undefined, { preserveProviderAuthFailure: true });
   }
   function updateGmailFilter(setter, value) {
     setter(value);

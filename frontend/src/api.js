@@ -29,6 +29,14 @@ export function validCapabilities(value) {
   return Boolean(exactKeys(value,['mode']) && ['PERSONAL','SANDBOX'].includes(value.mode));
 }
 function expectedOuterStatus(upstream) { return [400,401,413,503].includes(upstream) ? upstream : 502; }
+function askErrorContract(path,status,payload,category) {
+  if (path !== '/api/qa/ask' || category !== 'GMAIL_PROVIDER_AUTH_FAILURE' ||
+      !exactKeys(payload,['error','error_category','upstream_status','upstream_reason']) ||
+      payload.error !== 'Gmail question retrieval failed' || payload.error_category !== category ||
+      payload.upstream_status !== 401 || !safeGmailReasons.has(payload.upstream_reason) || status !== 401) return null;
+  return { message:'Gmail did not accept the current authorization. Reconnect the approved account, then ask again.',
+    trustedProviderAuthFailure:true };
+}
 function viewerErrorContract(status, payload, category) {
   if (!exactKeys(payload,['error','error_category','upstream_status','upstream_reason']) || !validErrorText(payload.error) ||
       !viewerErrorTexts[category]?.includes(payload.error)) return null;
@@ -118,6 +126,7 @@ export async function request(path, token, { method = 'GET', body, signal, timeo
         ? payload.error_category
         : directGmailViewer && typeof payload?.error_category === 'string' && viewerCategories.has(payload.error_category)
           ? payload.error_category : '';
+      const askContract = askErrorContract(path,response.status,payload,category);
       const viewerHasSafeStatusOnlyError = directGmailViewer && viewerStatusOnlyContract(response.status,payload);
       const viewerContract = directGmailViewer ? viewerErrorContract(response.status,payload,category) : null;
       const viewerHasUnrecognizedError = directGmailViewer && (typeof payload?.error_category === 'string'
@@ -126,7 +135,7 @@ export async function request(path, token, { method = 'GET', body, signal, timeo
         : viewerHasSafeStatusOnlyError && response.status === 400 ? 'The viewer request could not be validated. Run a fresh Gmail search and select the email again.'
         : '');
       const genericFailure = 'The backend could not complete the request. Check its health and try again.';
-      const message = viewerMessage || (viewerHasUnrecognizedError ? genericFailure : (directGmailSearch && category === 'GMAIL_SEARCH_REQUEST_TIMEOUT' ? 'Gmail search timed out. No results were returned; submit a fresh search to try again.'
+      const message = askContract?.message || viewerMessage || (viewerHasUnrecognizedError ? genericFailure : (directGmailSearch && category === 'GMAIL_SEARCH_REQUEST_TIMEOUT' ? 'Gmail search timed out. No results were returned; submit a fresh search to try again.'
         : directGmailSearch && category === 'GMAIL_SEARCH_CAPACITY_EXHAUSTED' ? 'Gmail search is busy. Wait briefly, then submit a fresh search.'
         : directGmailSearch && category === 'GMAIL_PROVIDER_AUTH_FAILURE' ? 'Access token or approved Gmail account was rejected. Reconnect before searching again.'
         : response.status === 401 ? 'Access token rejected. Reconnect with the current local token.'
@@ -137,7 +146,8 @@ export async function request(path, token, { method = 'GET', body, signal, timeo
         : response.status === 400 ? 'Check your question or filters. This request was not accepted.'
         : response.status === 413 ? 'The question is too large.'
         : genericFailure));
-      throw new ApiError(response.status, message, category, viewerContract?.trustedProviderAuthFailure === true);
+      throw new ApiError(response.status, message, category,
+        askContract?.trustedProviderAuthFailure === true || viewerContract?.trustedProviderAuthFailure === true);
     }
     try { return await response.json(); }
     catch { throw new ApiError(502, 'The backend returned an unreadable response.'); }

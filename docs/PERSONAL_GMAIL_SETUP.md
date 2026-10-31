@@ -6,12 +6,12 @@ Personal Gmail V1 is read-only and bounded. Search and Ask retrieve only the app
 
 ## Requirements
 
-- Windows and PowerShell 7 (the supplied launch helpers are PowerShell scripts).
+- Windows with Windows PowerShell 5.1. PowerShell 7 can also invoke these Personal launchers; their child sessions use the installed Windows PowerShell 5.1 executable.
 - Git for Windows, with `git` available in PowerShell. The launcher checks `git worktree list` to keep private runtime files outside registered checkouts; clone the project with Git rather than downloading a ZIP.
 - Java 21 and Maven 3.6.3 or later.
 - Node.js 24.x (24.15 or later) and npm.
 - A Google account you own and control, and your own Google Cloud project.
-- Free loopback ports. The examples use backend port 8081, frontend port 5173, and a Personal runtime under your user LocalAppData directory.
+- Free loopback ports. The examples use backend port 8083, frontend port 5173, and a Personal runtime under your user LocalAppData directory.
 
 Run the commands from the cloned repository root unless a step says otherwise. H2 is embedded; no separate database server or database account is required. Personal runtime files must be outside the checkout.
 
@@ -31,7 +31,7 @@ Each person using this project must create and use their own Google Cloud projec
 
 Google states that an External app in Testing limits its test-user list and that authorizations for scopes other than basic profile scopes expire after seven days; an offline refresh token issued in Testing mode also expires. Gmail `gmail.readonly` is not a basic profile scope. Expect to reauthorize periodically while testing. Production publishing and verification requirements depend on the app's audience and use; check Google's current requirements before changing publishing status. See [Google's audience and publishing-status guidance](https://support.google.com/cloud/answer/15549945?hl=en) and [Gmail scope classifications](https://developers.google.com/workspace/gmail/api/auth/scopes).
 
-## 2. Build and initialize a new Personal runtime
+## 2. First-time setup: build and initialize a new Personal runtime
 
 From the repository root, build and run the offline test suite:
 
@@ -39,7 +39,14 @@ From the repository root, build and run the offline test suite:
 mvn -B clean verify
 ```
 
-Choose a new runtime directory and the path where you saved your OAuth client file. Do not point the runtime into the repository. `-InitializeRuntime` is only for a path that does not already exist; it provisions local keys, a local API token, a Personal tenant identity, and an empty H2 schema. Never use initialization to repair or replace an existing runtime.
+Install the frontend dependencies once before starting the servers:
+
+```powershell
+Push-Location .\frontend
+try { npm ci } finally { Pop-Location }
+```
+
+Choose a new runtime directory and the path where you saved your OAuth client file. The examples below are portable defaults: replace `$privateDirectory` and `$clientFile` with your own absolute paths if needed, and keep those selections consistent in every terminal. Do not point the runtime into the repository. `-InitializeRuntime` is only for a path that does not already exist; it provisions local keys, a local API token, a Personal tenant identity, and an empty H2 schema. Never use initialization to repair or replace an existing runtime.
 
 Normal Personal startup also requires `CHALLENGE_RUNTIME_DIR` in the same PowerShell process. Set it to your actual, separate Challenge/SANDBOX runtime directory outside every checkout. If you do not use a Challenge runtime on this computer, choose a dedicated external path reserved for that profile; keep it separate from the Personal directory. The launcher normalizes both paths and refuses identical or nested/overlapping roots. Use the same setting in every PowerShell window that starts the Personal backend.
 
@@ -51,19 +58,18 @@ $privateDirectory = Join-Path $localRoot 'personal-gmail'
 $clientFile = Join-Path $localRoot 'google-desktop-client.json'
 if (Test-Path -LiteralPath $privateDirectory) { throw 'Choose a new runtime path or follow the existing-runtime procedure; do not initialize over existing data.' }
 $env:PERSONAL_GMAIL_ACCOUNT = Read-Host 'Your approved Gmail account'
-./scripts/Start-Personal.ps1 -PrivateDirectory $privateDirectory -ClientFile $clientFile -Port 8081 -ApprovePersonalGoogleAccess -InitializeRuntime
+./scripts/Start-Personal.ps1 -PrivateDirectory $privateDirectory -ClientFile $clientFile -Port 8083 -ApprovePersonalGoogleAccess -InitializeRuntime
 ```
 
 Keep this PowerShell window open while the backend runs. The launcher configures Personal mode and leaves Drive disabled by default. Do not add `-EnablePersonalDrive` or any provider/export operation. The first-run runtime does not have a Gmail grant yet; authorize it in the next step. On later launches, use the same runtime and client paths and omit `-InitializeRuntime`; reuse verifies existing files rather than creating or repairing missing ones.
 
-## 3. Start the React frontend
+## 3. First-time setup: start the React frontend
 
-Open a second PowerShell 7 window at the repository root:
+Leave the first-time backend running. Open a second PowerShell window at the repository root:
 
 ```powershell
 Set-Location .\frontend
-npm ci
-$env:BACKEND_ORIGIN = 'http://127.0.0.1:8081'
+$env:BACKEND_ORIGIN = 'http://127.0.0.1:8083'
 npm run dev
 ```
 
@@ -71,14 +77,15 @@ Open `http://127.0.0.1:5173`. In the dashboard's **Local access token** field, e
 
 ## 4. Authorize Gmail
 
-The dashboard does not start OAuth consent itself. While the Personal backend is running and after connecting the dashboard, open a third PowerShell window at the repository root and run the following. It reads the local API token into memory, calls only the backend's protected local OAuth-start endpoint, verifies the requested scope, and opens Google's consent page. It does not print the token or authorization URL.
+The dashboard and demo launcher do not start OAuth consent automatically. This step is manual; use it again only when Google authorization needs renewal. It reuses the selected runtime and saves the authorized grant through the application without resetting runtime data. While the Personal backend is running and after connecting the dashboard, open a third PowerShell window at the repository root and run the following. It reads the local API token into memory, calls only the backend's protected local OAuth-start endpoint, verifies the requested scope, and opens Google's consent page. It does not print the token or authorization URL.
 
 ```powershell
-$privateDirectory = Join-Path (Join-Path $env:LOCALAPPDATA 'E9RentalConnector') 'personal-gmail'
+$privateDirectory = Read-Host 'Absolute path to the same Personal runtime used in step 2'
+$backendPort = 8083
 $apiTokenPath = Join-Path $privateDirectory 'local-api-token.key'
 $apiToken = [IO.File]::ReadAllText($apiTokenPath).Trim()
 try {
-    $start = Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:8081/api/gmail/oauth/start' -Headers @{ Authorization = "Bearer $apiToken" }
+    $start = Invoke-RestMethod -Method Post -Uri ('http://127.0.0.1:{0}/api/gmail/oauth/start' -f $backendPort) -Headers @{ Authorization = "Bearer $apiToken" }
     $authorizationUri = [Uri]$start.authorization_url
     $scopeParts = @($authorizationUri.Query.TrimStart('?').Split('&') | Where-Object { $_.StartsWith('scope=') })
     if ($authorizationUri.Scheme -ne 'https' -or $authorizationUri.Host -ne 'accounts.google.com' -or $scopeParts.Count -ne 1 -or [Uri]::UnescapeDataString($scopeParts[0].Substring(6)) -ne 'https://www.googleapis.com/auth/gmail.readonly') {
@@ -91,7 +98,7 @@ try {
 }
 ```
 
-Review the Google consent screen and grant only the displayed Gmail read-only permission. The local callback uses `http://127.0.0.1:8081/` and validates OAuth state and PKCE. Its current response text may mention the historical export workflow; do not run a Gmail export in Personal mode. Return to the Personal dashboard and verify access with a separately confirmed Search or Ask operation. No Gmail message is retrieved merely by starting consent.
+Review the Google consent screen and grant only the displayed Gmail read-only permission. The local callback uses `http://127.0.0.1:8083/` and validates OAuth state and PKCE. Its current response text may mention the historical export workflow; do not run a Gmail export in Personal mode. Return to the Personal dashboard and verify access with a separately confirmed Search or Ask operation. No Gmail message is retrieved merely by starting consent.
 
 ## 5. Try the Personal Gmail features
 
@@ -104,8 +111,29 @@ Return to the dashboard:
 
 Each live operation requires its own confirmation/approval. Canceling does not authorize or send that operation. Do not use historical SANDBOX export, ingestion, or sync instructions for Personal Gmail.
 
-## 6. Stop safely
+## 6. Subsequent startup: reuse the existing runtime
 
-Press **Ctrl+C** in the backend PowerShell window and wait for it to exit. Press **Ctrl+C** in the frontend window. Keep the external runtime and OAuth client file in place for later use; do not delete runtime files as a way to disconnect. To revoke Google authorization, use your Google Account's security settings or the appropriate Google Cloud/user authorization controls, then handle local data separately. No Gmail message index is created by this Personal live flow.
+Complete Google consent in step 4 before stopping the first-time backend: existing-runtime validation requires the saved Gmail grant. After first-time setup, stop the separately started backend and frontend with Ctrl+C in their respective windows. Wait for both to exit before using the combined launcher. Do not run initialization again.
+
+From the repository root, open a PowerShell window and set your paths and required environment variables in that same session:
+
+```powershell
+$privateDirectory = Read-Host 'Absolute path to your existing Personal runtime'
+$clientFile = Read-Host 'Absolute path to your own Desktop OAuth client JSON'
+$env:CHALLENGE_RUNTIME_DIR = Read-Host 'Absolute path reserved for your separate Challenge runtime'
+$env:PERSONAL_GMAIL_ACCOUNT = Read-Host 'Your approved Gmail account'
+$applicationJar = Join-Path (Get-Location) 'target/connector-practice-0.0.1-SNAPSHOT.jar'
+.\scripts\Start-PersonalDemo.ps1 -PrivateDirectory $privateDirectory -ClientFile $clientFile -ApplicationJar $applicationJar -ApprovePersonalGoogleAccess
+```
+
+Use the same runtime, client and approved account as first-time setup. If you built the JAR elsewhere, set `$applicationJar` to that existing file. `PERSONAL_GMAIL_ACCOUNT` and `CHALLENGE_RUNTIME_DIR` must be set in this launch session; the launcher loads the remaining security configuration through `Start-Personal.ps1`. `.env.example` is a reference template and is not automatically loaded. Never store real account identifiers or secrets in tracked files or `VITE_*` variables.
+
+The demo launcher checks Java 21, Node.js 24.15+ in the 24.x line, Git, installed frontend dependencies and free ports. It calls the existing Personal backend launcher without initialization, waits for HTTP health and process ownership on 8083, then starts Vite on 5173 with `BACKEND_ORIGIN=http://127.0.0.1:8083`. It starts neither Google consent nor Gmail retrieval automatically. Manual local-token entry in the dashboard and separate per-operation confirmations still apply. No repeat build or `npm ci` is needed unless code/dependencies changed or build/dependency files are missing.
+
+If configuration is missing, a port is occupied, the runtime is incomplete, or ownership/readiness cannot be verified, startup fails closed. Read the reported error; never reset, delete or reinitialize an existing runtime as a repair. Bootstrap continuation is unavailable in this public release; an incomplete runtime requires separate maintainer review.
+
+## 7. Stop safely
+
+With the demo launcher, wait until Gmail and OAuth operations are idle, then press **Q** (Q followed by Enter also works) or **Ctrl+C** in its console. Cleanup forcibly terminates only the backend/frontend process trees owned by this launcher; it does not gracefully drain in-flight work. For the separate first-time servers, use Ctrl+C in each server window. Keep the external runtime and OAuth client file in place for later use; do not delete runtime files as a way to disconnect. To revoke Google authorization, use your Google Account's security settings or the appropriate Google Cloud/user authorization controls, then handle local data separately. No Gmail message index is created by this Personal live flow.
 
 For Challenge/SANDBOX-only synthetic or export guidance, see [GMAIL_SETUP.md](GMAIL_SETUP.md). Personal Drive remains disabled and is outside this guide.

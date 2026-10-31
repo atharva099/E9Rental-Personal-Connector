@@ -457,6 +457,22 @@ describe('local connector workspace',()=>{
     expect(screen.queryByText('synthetic-mail-1')).not.toBeInTheDocument();
     expect(screen.getByRole('alert')).toHaveTextContent('Access token rejected');
   });
+  it('keeps the local session when Ask reports a validated Gmail provider-auth rejection',async()=>{
+    activeMode='PERSONAL';
+    qa=async()=>response({error:'Gmail question retrieval failed',error_category:'GMAIL_PROVIDER_AUTH_FAILURE',
+      upstream_status:401,upstream_reason:'UNSPECIFIED'},401);
+    const user=await connected('PERSONAL');
+    await user.type(screen.getByLabelText('Your question'),'Show my latest Gmail emails');
+    await user.click(screen.getByRole('button',{name:'Ask Gmail'}));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Gmail did not accept the current authorization');
+    expect(screen.getByText('Personal Gmail connected')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Local access token')).not.toBeInTheDocument();
+    const capabilityCall=fetch.mock.calls.find(([path])=>path==='/api/capabilities');
+    const askCall=fetch.mock.calls.find(([path])=>path==='/api/qa/ask');
+    expect(capabilityCall[1].headers.Authorization).toBe('Bearer '+TOKEN);
+    expect(askCall[1].headers.Authorization).toBe(capabilityCall[1].headers.Authorization);
+    expect(askCall[1].headers['X-Client-Session']).toMatch(/^[0-9a-f-]{36}$/i);
+  });
   it('renders empty Gmail results and rejects malformed answer payloads',async()=>{
     gmailSearch=async()=>response({results:[],partial_results:false,coverage_warning:null});qa=async()=>response({answer:'UNTRUSTED_FORMAT'});
     const user=await connected();await user.type(screen.getByLabelText('Keyword'),'invoice');
