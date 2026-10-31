@@ -2,15 +2,15 @@
 
 This repository is a local portfolio/practice application, not a production authentication or hosting system. Do not expose the Java or Vite servers to the public Internet.
 
-## Proposed source-only publication exception — pending user approval
+## Approved source-only publication exception — 2026-10-31
 
-PROJECT_RULES.md, "Completion and Git gates," requires an explicit retention/deletion/recovery decision before release; PROJECT_ROADMAP.md keeps P7 mandatory for formal P8 and later milestones. Neither currently distinguishes an audited source-code distribution from operational acceptance. The user's source-sharing goal is recorded, but this proposed clarification is not adopted automatically and does not authorize a push.
+PROJECT_RULES.md, "Completion and Git gates," requires an explicit retention/deletion/recovery decision before release; PROJECT_ROADMAP.md keeps P7 mandatory for formal P8 and later milestones. On 2026-10-31 the user explicitly approved the following narrow exception for source sharing, distinguishing it from operational acceptance. This approval does not authorize a GitHub push.
 
-Proposed exception: **Permit publication of the reviewed source, tests, synthetic samples and documentation for learning and local development when the exact publishable tree and reachable history pass privacy review, clone/build evidence applies, users supply their own credentials/runtime, and operational limitations are disclosed. P2/P3/P7/P8/P12 statuses and requirements for private-data use, operational acceptance and production deployment remain unchanged. Do not distribute private runtimes, secrets, operational backups or Git internals. Every push, real-account operation and destructive action still requires its specific authorization.**
+Approved exception: **Permit publication of the reviewed source, tests, synthetic samples and documentation for learning and local development when the exact publishable tree and reachable history pass privacy review, clone/build evidence applies, users supply their own credentials/runtime, and operational limitations are disclosed. P2/P3/P7/P8/P12 statuses and requirements for private-data use, operational acceptance and production deployment remain unchanged. Do not distribute private runtimes, secrets, operational backups or Git internals. Every push, real-account operation and destructive action still requires its specific authorization.**
 
 The first-time public-candidate OAuth flow and installation on another laptop remain NOT VERIFIED; no additional Google test is required merely to prepare this source release. The source-release scan is targeted evidence, not a guarantee that every secret format or vulnerability was detected. Historical SANDBOX/default path references are not required by the Personal setup, which uses explicit user-selected external paths. Intentional MIT copyright attribution and public repository identity are public metadata, not connector account data.
 
-Pending approval of this exception, the existing broad formal-release gate interpretation continues to block publication. Documentation may be safely checkpointed locally after review; a local documentation commit is not operational acceptance, adoption of the exception or permission to push.
+Under this approved exception, incomplete operational milestones do not block the scoped source distribution once its source-safety conditions pass. Formal operational release gates remain in force. A reviewed local documentation commit records this approval; it is not operational acceptance or permission to push. The user requires final preparation and a separate explicit push authorization before GitHub publication.
 
 ## Personal phase security gates
 
