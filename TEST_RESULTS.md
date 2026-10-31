@@ -1,4 +1,55 @@
 # Test results
+
+## Source-only publication evidence boundary — 2026-10-31
+
+The intended distribution is source/tests/synthetic samples/documentation, with no private runtime or credentials. The application source, setup commands and launcher from `a1b685ca3814cb4fca8bbc87fc7c58faf860ecd9` remain unchanged; existing 487 backend, 136 frontend, 18 synthetic launcher passes and successful builds remain applicable. They are not new executions in this documentation task. README, SECURITY.md and the existing evidence records distinguish source sharing from formal operational acceptance, preserving all prior metadata/ACL/cleanup findings.
+
+Fresh first-time OAuth on the exact public candidate, another-laptop installation and independent browser acceptance remain NOT VERIFIED. P2 BLOCKED, P3/P7 PARTIAL and formal P8/P12 incomplete are unchanged. A narrow source-publication exception is proposed in SECURITY.md for explicit user approval, not enacted. Exact working/staged source and reachable-history privacy checks, local documentation-link consistency and whitespace checks are required before the authorized local documentation commit; actual outcomes are reported in this task's final response. No application suites or live Gmail/OAuth operations are repeated.
+
+## Restricted final cleanup metadata check — 2026-10-31
+
+PASS: the three previously inventoried legacy Personal export/log candidates were positively matched as regular, non-redirected files by scoped metadata. All three were preserved; zero files were deleted. The export is prohibited from cleanup, and metadata does not establish absence of active/recovery dependencies for either log candidate. The empty log candidate was not treated as disposable solely from zero size. No private file contents, tokens, keys or messages were read; no secure-erasure or backup-copy-removal claim is made. Application files remain unchanged, so the 487 backend, 136 frontend and 18 launcher passes are reused without rerunning suites. ACL remediation and remaining P2/P7 gaps are unchanged; exact-public-candidate first-time OAuth remains NOT VERIFIED.
+
+## Targeted ACL remediation verification — 2026-10-31
+
+Evidence class: independently executed Windows metadata/ACL checks under explicit user authorization, not a Gmail/provider test. The exact legacy client candidate and recovery directory with its two known files were confidently identified from the prior inventory. Preflight verified file/directory types, expected sizes, current-user ownership, inheritance, no deny rules, no redirected targets and no unknown application identities. The Java-process metadata query returned no Java processes; no application was stopped or restarted.
+
+- PASS: two ACL writes (legacy client file and recovery directory), limited to these authorized targets. Broad inherited Users/Authenticated Users/Administrators grants were removed; current user and SYSTEM retain FullControl. The two recovery files inherited the restricted directory permissions automatically; no indiscriminate recursive update occurred.
+- PASS: effective access read back on all four targets with no unexpected allow/deny identities, preserved ownership and continued existence. Length and creation/last-write metadata matched the pre-change snapshot. Contents were not opened, hashed or copied; no content-integrity or restoration conclusion follows.
+- SKIPPED BY SCOPE: other legacy parents, runtime files and historical backup trees. No owner change, credential revocation/rotation, backup-content modification, deletion, restore or service operation occurred. No target change failed or required a broadening rollback.
+
+These observations supersede the permission failures for the specific targets in the earlier inventory below. They do not establish effective account/credential/token/key separation, provider-side revocation, historical artifact integrity, deletion or recovery. Fresh first-time exact-candidate OAuth and independent browser acceptance stay NOT VERIFIED. The 487/136 application test passes and 18 synthetic launcher passes are reused, not newly executed. Only documentation consistency, whitespace, diff/privacy and Git-state checks are required for this evidence update.
+
+## Scoped runtime metadata inventory evidence — 2026-10-31
+
+New read-only checks, separate from application tests: nine explicitly identified project directory trees (687 files), plus three OAuth-client candidate files, were inventoried using names, size, timestamps, extensions, ACLs and owner metadata only. Traversal reported zero access errors, zero skipped reparse points and no truncation. Parent-path checks for the known Personal and Challenge runtimes found no redirect and no directory overlap. No unrelated personal folders or private file contents were opened. See docs/PERSONAL_CONNECTORS.md for sanitized counts and status classifications.
+
+PASS: restrictive ACL/ownership metadata for the known Personal runtime and current client, and separate known runtime/API-token/key paths. FAIL: a legacy/default Challenge OAuth-client candidate permits Authenticated Users modify access and Users read access; its effective use/validity is NOT VERIFIED. Recovery code-checkpoint permissions also permit broad modification, so existence alone does not establish trusted rollback integrity. No token/key/tenant values were compared and no provider-side credential state was established.
+
+Inventory found seven export-named JSON candidates and 56 log/trace candidates across the scoped runtime/backup trees, all older than seven/fourteen days respectively by last-write metadata. One export and two log/trace candidates were in a legacy Personal runtime; other candidates belong to Challenge/historical recovery contexts. Three archives were found in historical recovery trees. These are filename/age classifications, not inspected content, proof of private-data duplication, proof of retention applicability, deletion or restoration. No temporary-extension files were found within these trees; host temporary directories were not exhaustively searched.
+
+The prior 487 backend, 136 frontend and 18 synthetic launcher passes remain applicable: no application or test source changed. This task does not repeat those suites or any Gmail/OAuth operation. Fresh first-time exact-public-candidate OAuth remains NOT VERIFIED. P2/P7 operational gates remain unresolved; no permission change, deletion, revocation, backup modification or restore was performed.
+
+## Public release candidate offline acceptance reconciliation — 2026-10-31
+
+Application/documentation baseline: `a1b685ca3814cb4fca8bbc87fc7c58faf860ecd9` on public `main`, with 243 reviewed files. The temporary installation copy included the pending release changes before that commit; a later SHA-256 inventory comparison confirmed every committed candidate file matched the tested source. This reconciliation changes evidence documentation only and does not invalidate application-suite results.
+
+Previously executed against that candidate, not rerun here:
+
+| Check | Result and evidence boundary |
+| --- | --- |
+| `mvn -B clean verify` | PASS: 487 tests, zero failures/errors/skips; executable JAR produced, using Java 21.0.12 and Maven 3.9.16. Existing local Maven dependencies were reused; this was not a blank Windows installation. |
+| `npm ci`, frontend tests and production build | PASS: Node 24.19.0/npm 11.17.0; dependency installation succeeded with zero reported vulnerabilities; 136 tests passed; Vite production build passed. This does not constitute a comprehensive backend dependency vulnerability assessment. |
+| Synthetic initialization/reuse | PASS: 18 launcher tests after placing synthetic runtimes outside the temporary registered checkout. Initial 11 failures were caused by the test layout correctly triggering runtime isolation; no source fix was required. |
+| Windows PowerShell 5.1 and documentation | PASS: Personal launchers and 14 documented command blocks parsed; demo launcher rejected missing and incomplete synthetic runtimes without initializing or repairing them. |
+| Privacy/publication and inventory | PASS: targeted credential/artifact scans, reachable-history audit and tested-inventory comparison; no private runtime was copied. These scans are not comprehensive security certification. |
+
+Source/evidence review supports exact account and readonly-scope enforcement, local bearer checks, separate operation approvals, logical expiry/replay protection, blocked Personal export/ingestion/sync/index retrieval, default-disabled Drive and denied Personal WhatsApp ingestion. Approvals expire after 60 seconds; Viewer selection handles expire after five minutes. Expired entries are rejected and purged on registry activity; this is not a guaranteed timed memory-erasure service. Application message logging is not a host log-retention mechanism. OAuth refresh rejection fails closed; cached access tokens and provider revocation timing do not establish immediate stale-access removal.
+
+User-reported Development evidence includes working Ask/Search/latest-10/Viewer, successful reauthorization after a password change, one subsequent same-runtime/JAR restart without renewed consent, and successful demo startup/Q shutdown. These operations were not independently repeated against the public candidate. Fresh first-time OAuth installation against this exact public candidate is **NOT VERIFIED**, intentionally omitted by user decision; installation on another laptop and formal independent browser acceptance are also NOT VERIFIED. No new Google account, OAuth client or real runtime is required by this record.
+
+P2 remains BLOCKED, P3 and P7 remain PARTIAL, and formal P8/P12 acceptance remains NOT STARTED. The outstanding runtime-specific provenance/isolation, lifecycle and recovery evidence cannot be inferred from synthetic tests or different file paths. Full suites were not rerun for this documentation reconciliation. New documentation/privacy/whitespace check results are reported with this task's final report; no new application-test count is claimed here.
+
 ## Gmail V1 manual browser observations and focused offline tests — 2026-10-30
 
 ### User-reported manual browser observations

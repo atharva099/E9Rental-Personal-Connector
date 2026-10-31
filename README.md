@@ -2,6 +2,8 @@
 
 A local portfolio project that brings rental-business evidence from email, documents and simulated chat into one searchable workspace. Ask a question, inspect the original excerpt and follow its source reference.
 
+The source is shared for learning and local development, not as a production security certification or hosted service. Each developer must create their own Google Desktop OAuth credentials and external private runtime; the reviewed source distribution includes no private Gmail messages, OAuth credentials or runtime security files. Development's Gmail and demo-startup observations are user-reported; the public candidate passed offline builds/tests, but fresh first-time OAuth against this exact candidate has **not been independently verified**. P2/P7/P12 operational acceptance remains incomplete. See [security and source-release scope](SECURITY.md) and the [Personal Gmail setup guide](docs/PERSONAL_GMAIL_SETUP.md).
+
 ## Personal Connector product vision
 
 The primary Personal Connector goal is: **A user securely connects their Gmail account, asks a question in natural language, and the application finds relevant authorized Gmail messages and produces an accurate answer supported by source citations.**
