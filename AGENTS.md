@@ -1,11 +1,11 @@
 # Agent instructions — Personal connectors
 
-Scope: this worktree and descendants. Work only in D:/E9Rental-Connector-Personal on feature/personal-connectors.
+Scope: this repository clone and its descendants. Work in the contributor's own checkout and current approved branch. Do not require the maintainer's directories or branches; references to them in historical records describe earlier development only. Do not switch branches without authorization.
 
 - Read PROJECT_RULES.md, PROJECT_ROADMAP.md, SECURITY.md, PROJECT_TRACKER.md, TEST_RESULTS.md and ARCHITECTURE.md before work.
-- The current task authorizes review, complete verification and a local commit of the existing Gmail-only/governance milestone if every check passes. Do not implement features, run OAuth, access accounts, inspect credentials, change ACLs, merge, push or publish. Future task authorization follows the latest user instruction.
+- Follow the current user's explicit task scope. This file grants no standing permission to access accounts or credentials, change permissions, commit, merge, push or publish.
 - Follow one user-approved task at a time. State files, purpose and scope before changes; report actual results, blockers and the next task; stop at the requested milestone.
-- Preserve pending Gmail-only implementation and all other uncommitted work. Never reset/discard files or modify the original Challenge/testing worktrees.
+- Preserve all uncommitted work. Never reset/discard files or modify other checkouts, testing worktrees or recovery artifacts without explicit authorization.
 - The original Challenge eight-hour session and records are historical and immutable for this Personal phase. Do not restart, extend or reuse that timer as a Personal deadline.
 - Personal account/folder access, credential handling, permission changes, external data transmission and provider writes require explicit user authorization for that action. Configuration approval flags alone do not authorize agent access.
 - Preserve SANDBOX defaults and restrictions. Personal mode requires separate approval, identities, runtime directories, tenant, API token, encryption keys, token files, exports and databases. Never import Challenge fixtures into a Personal index.
