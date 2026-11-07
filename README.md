@@ -1,8 +1,8 @@
-# E9Rental Connector Practice
+# E9Rental Personal Connector — Practice Project
 
-A local portfolio project that brings rental-business evidence from email, documents and simulated chat into one searchable workspace. Ask a question, inspect the original excerpt and follow its source reference.
+A local Java 21, Spring Boot, and React portfolio project for exploring bounded retrieval and source-cited answers over synthetic rental-business evidence.
 
-The source is shared for learning and local development, not as a production security certification or hosted service. Each developer must create their own Google Desktop OAuth credentials and external private runtime; the reviewed source distribution includes no private Gmail messages, OAuth credentials or runtime security files. Development's Gmail and demo-startup observations are user-reported; the public candidate passed offline builds/tests, but fresh first-time OAuth against this exact candidate has **not been independently verified**. P2/P7/P12 operational acceptance remains incomplete. See [security and source-release scope](SECURITY.md) and the [Personal Gmail setup guide](docs/PERSONAL_GMAIL_SETUP.md).
+This is an independent local practice project, not an official E9Rental product or hosted production service. Q&A is deterministic, not LLM-powered. WhatsApp-style events are simulated; there is no Meta account or API integration. Personal Gmail operations are limited, read-only, and separately gated; full-mailbox synchronization, export, snapshot ingestion, indexed Gmail search, and local-index Gmail Q&A are disabled in the current Personal workflow. First-time OAuth and live provider behavior are not claimed as independently verified. See [security and source-release scope](SECURITY.md) and the [Personal Gmail setup guide](docs/PERSONAL_GMAIL_SETUP.md).
 
 ## Personal Connector product vision
 
